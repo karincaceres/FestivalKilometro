@@ -1,0 +1,90 @@
+.fixture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.team-button {
+  background-color: #102D69;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border:none;
+  color: white;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+ .team-button {
+  background-color: #102D69;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border:none;
+  color: white;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+.selected-team {
+  color: white;
+  border: 2px solid #13a538;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+}
+
+ul {
+  list-style: none; /* Quita los estilos predeterminados de la lista */
+  padding-left: 20px; /* Ajusta el espacio a la izquierda para dejar espacio para los puntos */
+}
+
+/* Estilo para los elementos de la lista */
+ul li {
+  margin-left: -1em; /* Ajusta el margen izquierdo para dar espacio entre el punto y el texto */
+}
+
+/* Estilo para los puntos de la lista */
+ul li:before {
+  content: "• "; /* Usamos un punto como marcador */
+  color: #13A538; /* Color verde */
+  display: inline-block; /* Muestra el punto como un elemento en línea */
+  font-size: 1em; /* Tamaño del punto */
+  margin-left: -1em; /* Alinea el punto con el borde izquierdo del contenedor del texto */
+}
