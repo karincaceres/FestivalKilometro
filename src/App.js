@@ -5,7 +5,6 @@ import './App.css';
 import { useLocation } from "react-router-dom";
 // Tus páginas
 import HomeView from './Pages/HomeView';
-import Info from './Pages/Info';
 import Evento from './Pages/Evento';
 
 import Contacto from './Pages/Contacto';
@@ -42,8 +41,8 @@ function App() {
           <Switch>
             {/* Rutas principales */}
             <Route exact path="/HomeView" component={HomeView} />
-            <Route path="/info" component={Info} />
-            <Route path="/evento" component={Evento} /> 
+
+            <Route path="/evento" component={Evento} />
             <Route path="/sectores" component={Sectores} />
             <Route path="/contacto" component={Contacto} />
             <Route path="/puestoventa" component={PuestoVenta} />
