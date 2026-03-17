@@ -9,7 +9,7 @@ import BotonEntradas from '../assets/Cargando/bot_2.png';
 import BotonEntradasPC from '../assets/Cargando/bot_2_pc.png';
 import BotonIG_cel from "../assets/Cargando/btn_ig.png";
 import BotonIG_pc from "../assets/Cargando/btn_ig.png";
-
+import botontiktok from "../assets/Cargando/tk.png";
 class Cargando extends React.Component {
   render() {
     const min = window.innerWidth >= 790; // breakpoint desktop
@@ -37,8 +37,8 @@ class Cargando extends React.Component {
         <div
           style={{
             position: "absolute",
-            bottom: min ? "2%" : "20%",
-            left: "50%",
+            bottom: min ? "32%" : "20%",
+            left: min ? "73%" : "50%",
             transform: "translateX(-50%)",
             display: "flex",
             flexDirection: min ? "row" : "column", // cambia disposición según dispositivo
@@ -76,7 +76,25 @@ class Cargando extends React.Component {
               src={botonIG}
               alt="Instagram"
               style={{
-                width: min ? "80px" : "54px",
+                width: min ? "50px" : "54px",
+                filter: "drop-shadow(0px 0px 5px rgba(0,0,0,0.6))",
+              }}
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/festivalkilometro/"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={botontiktok}
+              alt="Instagram"
+              style={{
+                width: min ? "50px" : "54px",
                 filter: "drop-shadow(0px 0px 5px rgba(0,0,0,0.6))",
               }}
             />
