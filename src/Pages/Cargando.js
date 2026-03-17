@@ -37,11 +37,11 @@ class Cargando extends React.Component {
         <div
           style={{
             position: "absolute",
-            bottom: min ? "32%" : "20%",
+            bottom: min ? "32%" : "29%",
             left: min ? "73%" : "50%",
             transform: "translateX(-50%)",
             display: "flex",
-            flexDirection: min ? "row" : "column", // cambia disposición según dispositivo
+            flexDirection: min ? "row" : "row", // cambia disposición según dispositivo
             alignItems: "center",
             justifyContent: "center",
             gap: min ? "6px" : "3px",
@@ -60,7 +60,7 @@ class Cargando extends React.Component {
               textShadow: "0px 0px 8px rgba(0,0,0,0.6)",
             }}
           >
-            Seguinos
+
           </p>
 
           <a
@@ -76,7 +76,7 @@ class Cargando extends React.Component {
               src={botonIG}
               alt="Instagram"
               style={{
-                width: min ? "50px" : "54px",
+                width: min ? "50px" : "45px",
                 filter: "drop-shadow(0px 0px 5px rgba(0,0,0,0.6))",
               }}
             />
@@ -94,7 +94,7 @@ class Cargando extends React.Component {
               src={botontiktok}
               alt="Instagram"
               style={{
-                width: min ? "50px" : "54px",
+                width: min ? "50px" : "45px",
                 filter: "drop-shadow(0px 0px 5px rgba(0,0,0,0.6))",
               }}
             />
