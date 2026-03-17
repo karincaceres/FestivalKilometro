@@ -64,7 +64,7 @@ class Cargando extends React.Component {
           </p>
 
           <a
-            href="https://www.instagram.com/qlkfest/"
+            href="https://www.instagram.com/festivalkilometro/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
