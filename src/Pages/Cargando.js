@@ -37,7 +37,7 @@ class Cargando extends React.Component {
         <div
           style={{
             position: "absolute",
-            bottom: min ? "2%" : "16%",
+            bottom: min ? "2%" : "22%",
             left: "50%",
             transform: "translateX(-50%)",
             display: "flex",
@@ -65,7 +65,6 @@ class Cargando extends React.Component {
 
           <a
             href="https://www.instagram.com/festivalkilometro/"
-            target="_blank"
             rel="noopener noreferrer"
             style={{
               display: "flex",
