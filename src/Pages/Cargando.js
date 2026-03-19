@@ -59,9 +59,7 @@ class Cargando extends React.Component {
               lineHeight: min ? "1.4" : "1.3",
               textShadow: "0px 0px 8px rgba(0,0,0,0.6)",
             }}
-          >
-
-          </p>
+          ></p>
 
           <a
             href="https://www.instagram.com/festivalkilometro/"
@@ -82,7 +80,7 @@ class Cargando extends React.Component {
             />
           </a>
           <a
-            href="https://www.instagram.com/festivalkilometro/"
+            href="https://www.tiktok.com/@festival.km?_r=1&_t=ZS-94ldULst5ve"
             rel="noopener noreferrer"
             style={{
               display: "flex",
