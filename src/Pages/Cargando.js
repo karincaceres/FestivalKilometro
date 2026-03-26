@@ -37,7 +37,7 @@ class Cargando extends React.Component {
         <div
           style={{
             position: "absolute",
-            bottom: min ? "32%" : "29%",
+            bottom: min ? "32%" : "20%",
             left: min ? "73%" : "50%",
             transform: "translateX(-50%)",
             display: "flex",
