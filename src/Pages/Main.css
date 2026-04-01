@@ -1,35 +1,41 @@
 @font-face {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
-  src: local('FontsFree-Net-Druk-Wide-Bold'),
-    url('../assets/fonts/FontsFree-Net-Druk-Wide-Bold.ttf')
-      format("truetype");
+  font-family: "Blogh";
+  src: local('Blogh'),
+    url('../assets/fonts/Blogh.otf') format("opentype");
 }
 @font-face {
   font-family: "FuturaBkBTBook1";
-  src: local("FuturaBkBTBook1"),
-    url('../assets/fonts/FuturaBkBTBook1.ttf')
-      format("truetype");
+  src: local("Halogen-Regular"),
+    url('../assets/fonts/Halogen-Regular.otf') format("opentype");
 }
 @font-face {
-  font-family: "FuturaHvBTHeavy";
-  src: local("FuturaHvBTHeavy"),
-    url('../assets/fonts/FuturaHvBTHeavy.ttf')
-      format("truetype");
+  font-family: "MonumentExtended-Ultrabold";
+  src: local("MonumentExtended-Ultrabold"),
+    url('../assets/fonts/MonumentExtended-Ultrabold.otf') format("opentype");
 }
 @font-face {
   font-family: "RussoOne-Regular";
   src: local("RussoOne-Regular"),
-    url('../assets/fonts/RussoOne-Regular.ttf')
-      format("truetype");
+    url('../assets/fonts/RussoOne-Regular.ttf') format("truetype");
+}
+@font-face {
+  font-family: "MonumentExtended-Ultrabold";
+  src: local("MonumentExtended-Ultrabold"),
+    url('../assets/fonts/MonumentExtended-Ultrabold.otf') format("opentype");
+}
+@font-face {
+  font-family: "Halogen-Black";
+  src: local("Halogen-Black"),
+    url('../assets/fonts/Halogen-Black.otf') format("opentype");
 }
 
 html, body, * {
-  font-family: 'FuturaHvBTHeavy';
+  font-family: 'FuturaBkBTBook1';
 }
 
 .title {
   padding: 0;
-  font-family: 'FuturaHvBTHeavy';
+  font-family: 'FuturaBkBTBook1';
   color: white;
   font-size: 3.5em;
   margin-top: 0px;
@@ -47,7 +53,7 @@ html, body, * {
 }
 
 .header {
-  font-family: "FuturaHvBTHeavy";
+  font-family: "FuturaBkBTBook1";
   align-items: center;
   justify-self: center;
   justify-content: center;
@@ -56,28 +62,31 @@ html, body, * {
 
 .label-header-not-selected {
   background-color: transparent;
-  color: #000000; /* negro normal */
-  font-size: 0.8em;
+  color: #ffffff;
+  font-size: 1.2em;
   text-transform: uppercase;
   border: none;
-  padding: 6px 12px;
+  padding: 3px 5px;
   letter-spacing: 1px;
-  transition: color 0.25s ease;
-  font-family: 'FontsFree-Net-Druk-Wide-Bold';
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: 'Blogh';
 }
 
 .label-header-not-selected:hover {
-  color: #383636; /* texto blanco al pasar el mouse */
+  color: #ff6555;
 }
 
 .label-header-selected {
   background-color: transparent;
-  color: #ffffff; /* texto blanco cuando está activo */
-  font-weight: 900;
+  color: #ff6555;
+  font-size:1.2em;
   text-transform: uppercase;
   border: none;
-  padding: 6px 14px;
-  font-family: 'FontsFree-Net-Druk-Wide-Bold';
+  border-bottom: 2px solid #ff6555;
+  padding: 6px 5px;
+  cursor: pointer;
+  font-family: 'Blogh';
 }
 
 /* SUBMENUS */
@@ -116,45 +125,45 @@ html, body, * {
 
 
 .timeTitle {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
+  font-family: "Blogh";
   font-size: 3em;
   padding: 0.5em;
   color: #fff;
 }
 .timeTitleValues {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
+  font-family: "Blogh";
   font-size: 2em;
   padding: 0.5em;
   margin-top:0.5%;
   color: #fff;
 }
 .timeTitleXL  {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
+  font-family: "Blogh";
   font-size: 4em;
   padding: 1em;
   color: white;
 }
 .timeTitle300 {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
+  font-family: "Blogh";
   font-size: 1.8em;
   padding: 1;
   color: white;
 }
 .timeTitleR {
-   font-family: "FontsFree-Net-Druk-Wide-Bold";
+   font-family: "Blogh";
   font-size: 2.4em;
   margen-Top: '-10%';
   color: white;
 }
 
 .timeTitle_gracias {
-   font-family: "FontsFree-Net-Druk-Wide-Bold";
+   font-family: "Blogh";
   font-size: 3em;
   color: white;
 }
 
 .timeTitle_gracias_link {
-   font-family: "FontsFree-Net-Druk-Wide-Bold";
+   font-family: "Blogh";
   font-size: 2em;
   color: white;
   text-decoration: underline;
@@ -162,7 +171,7 @@ html, body, * {
 }
 
 .timeTitle_ing {
-   font-family: "FontsFree-Net-Druk-Wide-Bold";
+   font-family: "Blogh";
   font-size: 3em;
   padding: 1em;
   color: white;
@@ -203,7 +212,7 @@ html, body, * {
   color: white;
 }
 .timeTitlexs {
-  font-family: "FontsFree-Net-Druk-Wide-Bold";
+  font-family: "Blogh";
   font-size: 2.4em;
   margen-Top: '-10%';
   color: white;
@@ -289,13 +298,13 @@ input {
   margin: 0;
 }
 .textFormW {
-  font-family: "FuturaHvBTHeavy";
+  font-family: "FuturaBkBTBook1";
   font-size: 1em;
   color: #000000;
   margin: 0;
 }
 .textFormError {
-  font-family: "FuturaHvBTHeavy";
+  font-family: "FuturaBkBTBook1";
   font-size: 1em;
   color: #ff0000;
   margin: 0;
@@ -318,7 +327,7 @@ input {
 }
 
 .titleFormTitle {
-  font-family: "FuturaHvBTHeavy";
+  font-family: "FuturaBkBTBook1";
   font-size: 36px;
   color: #ffffff;
   margin: 0;

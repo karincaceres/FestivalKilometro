@@ -1,135 +1,226 @@
-import React from 'react';
-import './Main.css';
+import React from "react";
+import "./Main.css";
 
-import fondoDesktop from '../assets/Fondos/fondo1.png';
-import fondoMobile from '../assets/Fondos/fondoV.png';
+import fondoDesktop from "../assets/Fondos/fondo1.png";
+import fondoMobile from "../assets/Fondos/fondoV.png";
+import entradasFull from "../assets/Fondos/Entradas_1920x1080px.png";
 
-import imgGeneral from '../assets/Botones/entrada_general.png';
-import imgTribuna from '../assets/Botones/entrada_ultravip.png';
-import imgBoxes from '../assets/Botones/entrada_vip_full_standing.png';
-import imgVip from '../assets/Botones/entrada_paqrking.png';
-
-// 🖼️ Títulos
-import tituloDesktop from '../assets/titulos/TIPOSDE-ENTRADAS.png';
-import tituloMobile from '../assets/titulos/tipoentradascelu.png';
+import entrada1 from "../assets/Botones/Entradas_1_500x500px.png";
+import entrada2 from "../assets/Botones/Entradas_2_500x500px.png";
+import entrada3 from "../assets/Botones/Entradas_3_500x500px.png";
+import entrada4 from "../assets/Botones/Entradas_4_500x500px.png";
 
 const Evento = ({ redirect }) => {
   const isMobile = window.innerWidth <= 768;
 
   const containerStyle = {
-    minHeight: '100vh',
+    minHeight: "100vh",
     backgroundImage: `url(${isMobile ? fondoMobile : fondoDesktop})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: isMobile ? '0 0' : '10vh 5vw',
-    position: 'relative',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: isMobile ? "110px" : "120px",
+    paddingBottom: isMobile ? "130px" : "170px",
+    boxSizing: "border-box",
+    position: "relative",
+    overflow: "hidden",
   };
 
-  const titleContainerStyle = {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: isMobile ? '60px' : '40px',
-    marginTop: isMobile ? '-60px' : '80px',
+  const boardWrapperStyle = {
+    position: "relative",
+    width: "100vw",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "calc(50% - 50vw)",
+    marginRight: "calc(50% - 50vw)",
   };
 
-  const titleImageStyle = {
-    width: isMobile ? '50%' : '35%',
-    height: 'auto',
-    objectFit: 'contain',
+  const boardImageStyle = {
+    width: "100vw",
+    height: "auto",
+    display: "block",
+    objectFit: "cover",
+    userSelect: "none",
+    pointerEvents: "none",
   };
 
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-    gap: isMobile ? '25px 15px' : '2vw',
-    width: isMobile ? '90%' : '90%',
-    justifyItems: 'center',
-    alignItems: 'center',
-    marginTop: isMobile ? '-40px' : '0',
+  const hotspotBase = {
+    position: "absolute",
+    background: "transparent",
+    border: "none",
+    cursor: "pointer",
+    padding: 0,
+    margin: 0,
   };
 
-  const buttonStyle = {
-    border: 'none',
-    background: 'transparent',
-    cursor: 'pointer',
-    width: isMobile ? '42vw' : '18vw',
-    maxWidth: isMobile ? '160px' : '300px',
-    transition: 'transform 0.3s ease',
+  const mobileListStyle = {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "18px",
+    padding: "0 14px",
+    boxSizing: "border-box",
   };
 
-  const handleHover = e => (e.currentTarget.style.transform = 'scale(1.05)');
-  const handleOut = e => (e.currentTarget.style.transform = 'scale(1)');
+  const mobileButtonStyle = {
+    border: "none",
+    background: "transparent",
+    padding: 0,
+    margin: 0,
+    cursor: "pointer",
+    width: "92%",
+    maxWidth: "360px",
+    transition: "transform 0.25s ease",
+  };
+
+  const mobileImageStyle = {
+    width: "100%",
+    height: "auto",
+    display: "block",
+    objectFit: "contain",
+  };
+
+  const handleHover = (e) => {
+    e.currentTarget.style.transform = "scale(1.03)";
+  };
+
+  const handleOut = (e) => {
+    e.currentTarget.style.transform = "scale(1)";
+  };
+
+  if (isMobile) {
+    return (
+      <div style={containerStyle}>
+        <div style={mobileListStyle}>
+          <button
+            style={mobileButtonStyle}
+            onClick={() => redirect("entrada-general")}
+            onMouseOver={handleHover}
+            onMouseOut={handleOut}
+            aria-label="Entrada General Ruta 8"
+          >
+            <img
+              src={entrada1}
+              alt="Entrada General Ruta 8"
+              style={mobileImageStyle}
+            />
+          </button>
+
+          <button
+            style={mobileButtonStyle}
+            onClick={() => redirect("entrada-tribuna")}
+            onMouseOver={handleHover}
+            onMouseOut={handleOut}
+            aria-label="VIP Full Standing Ruta 9"
+          >
+            <img
+              src={entrada2}
+              alt="VIP Full Standing Ruta 9"
+              style={mobileImageStyle}
+            />
+          </button>
+
+          <button
+            style={mobileButtonStyle}
+            onClick={() => redirect("entrada-boxes")}
+            onMouseOver={handleHover}
+            onMouseOut={handleOut}
+            aria-label="Ultra VIP Standing Ruta 40"
+          >
+            <img
+              src={entrada3}
+              alt="Ultra VIP Standing Ruta 40"
+              style={mobileImageStyle}
+            />
+          </button>
+
+          <button
+            style={mobileButtonStyle}
+            onClick={() => redirect("entrada-parking")}
+            onMouseOver={handleHover}
+            onMouseOut={handleOut}
+            aria-label="Exclusive Site Ruta 66"
+          >
+            <img
+              src={entrada4}
+              alt="Exclusive Site Ruta 66"
+              style={mobileImageStyle}
+            />
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={containerStyle}>
-      {/* 🔹 Título centrado arriba */}
-      <div style={titleContainerStyle}>
+      <div style={boardWrapperStyle}>
         <img
-          src={isMobile ? tituloMobile : tituloDesktop}
-          alt="Tipos de Entradas"
-          style={titleImageStyle}
+          src={entradasFull}
+          alt="Tipos de entradas"
+          style={boardImageStyle}
         />
-      </div>
-
-      {/* 🔹 Grilla de botones */}
-      <div style={gridStyle}>
-        <button
-          style={buttonStyle}
-          onClick={() => redirect('entrada-general')}
-          onMouseOver={handleHover}
-          onMouseOut={handleOut}
-        >
-          <img
-            src={imgGeneral}
-            alt="Entrada General"
-            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
-          />
-        </button>
 
         <button
-          style={buttonStyle}
-          onClick={() => redirect('entrada-tribuna')}
+          onClick={() => redirect("entrada-general")}
           onMouseOver={handleHover}
           onMouseOut={handleOut}
-        >
-          <img
-            src={imgBoxes}
-            alt="Entrada Tribuna"
-            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
-          />
-        </button>
+          style={{
+            ...hotspotBase,
+            left: "4.8%",
+            top: "24.5%",
+            width: "18.5%",
+            height: "22%",
+          }}
+          aria-label="Entrada General Ruta 8"
+        />
 
         <button
-          style={buttonStyle}
-          onClick={() => redirect('entrada-boxes')}
+          onClick={() => redirect("entrada-tribuna")}
           onMouseOver={handleHover}
           onMouseOut={handleOut}
-        >
-          <img
-            src={imgTribuna}
-            alt="Entrada Boxes"
-            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
-          />
-        </button>
+          style={{
+            ...hotspotBase,
+            left: "26.8%",
+            top: "26.2%",
+            width: "21.8%",
+            height: "24%",
+          }}
+          aria-label="VIP Full Standing Ruta 9"
+        />
 
         <button
-          style={buttonStyle}
-          onClick={() => redirect('entrada-parking')}
+          onClick={() => redirect("entrada-boxes")}
           onMouseOver={handleHover}
           onMouseOut={handleOut}
-        >
-          <img
-            src={imgVip}
-            alt="Entrada Parking"
-            style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
-          />
-        </button>
+          style={{
+            ...hotspotBase,
+            left: "51.5%",
+            top: "24.5%",
+            width: "23%",
+            height: "24%",
+          }}
+          aria-label="Ultra VIP Standing Ruta 40"
+        />
+
+        <button
+          onClick={() => redirect("entrada-parking")}
+          onMouseOver={handleHover}
+          onMouseOut={handleOut}
+          style={{
+            ...hotspotBase,
+            left: "77.4%",
+            top: "18.5%",
+            width: "18.5%",
+            height: "21.5%",
+          }}
+          aria-label="Exclusive Site Ruta 66"
+        />
       </div>
     </div>
   );

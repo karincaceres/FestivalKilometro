@@ -1,8 +1,9 @@
-import React from 'react';
-import Background from '../assets/Fondos/fondo1.png';
-import BackgroundR from '../assets/Fondos/fondoV.png';
-import ImgVip from '../assets/Botones/entrada_vip_full_standing.png';
-import './Main.css';
+import React from "react";
+import Background from "../assets/Fondos/fondo1.png";
+import BackgroundR from "../assets/Fondos/fondoV.png";
+import tituloVip from "../assets/PuntosVentas/tit_2.png";
+import fondoMedio from "../assets/titulos/fondo.png";
+import "./Main.css";
 
 class EntradaVip extends React.Component {
   render() {
@@ -11,147 +12,207 @@ class EntradaVip extends React.Component {
 
     const containerStyle = {
       backgroundImage: `url(${Back})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      color: 'white',
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: isMobile ? '100px 5vw' : '120px 10vw',
-      flexDirection: isMobile ? 'column' : 'row',
-      gap: '5vw',
-      position: 'relative',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      fontFamily: "FuturaBkBTBook1",
+      backgroundRepeat: "no-repeat",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingTop: isMobile ? "110px" : "120px",
+      paddingBottom: isMobile ? "130px" : "170px",
+      boxSizing: "border-box",
+      position: "relative",
+      overflow: "hidden",
     };
 
-    const imageContainer = {
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '20px',
+    const middleStyle = {
+      position: "relative",
+      width: "100vw",
+      fontFamily: "FuturaBkBTBook1",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft: "calc(50% - 50vw)",
+      marginRight: "calc(50% - 50vw)",
     };
 
-    const imgStyle = {
-      width: isMobile ? '50vw' : '28vw',
-      height: 'auto',
-      objectFit: 'contain',
-      boxShadow: '0 0 20px rgba(0,0,0,0.6)',
+    const bgStyle = {
+      width: "100vw",
+      height: "100vh",
+      display: "block",
+      objectFit: "cover",
+      userSelect: "none",
+      pointerEvents: "none",
+    };
+
+    const contentStyle = {
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      alignItems: "center",
+      justifyContent: "center",
+      fontFamily: "FuturaBkBTBook1",
+      gap: isMobile ? "22px" : "26px",
+      padding: isMobile ? "20px 18px" : "20px 70px",
+      boxSizing: "border-box",
+    };
+
+    const leftStyle = {
+      width: isMobile ? "100%" : "34%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: isMobile ? "center" : "flex-end",
+      justifyContent: "center",
+      gap: isMobile ? "14px" : "18px",
+      marginTop: isMobile ? "0" : "-55px",
+    };
+
+    const titleStyle = {
+      width: isMobile ? "70%" : "55%",
+      maxWidth: isMobile ? "280px" : "430px",
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
     };
 
     const buttonStyle = {
-      backgroundColor: '#D8DE3E',
-      color: '#000',
-      fontFamily: 'FontsFree-Net-Druk-Wide-Bold',
-      border: 'none',
-      borderRadius: '40px',
-      padding: isMobile ? '2px 12px' : '4px 5px',
-      fontSize: isMobile ? '0.8em' : '1em',
-      cursor: 'pointer',
-      letterSpacing: '1px',
-      textTransform: 'uppercase',
-      transition: 'all 0.3s ease',
-      boxShadow: '0px 0px 12px rgba(0,0,0,0.5)',
+      backgroundColor: "#ff6555",
+      color: "#fff",
+      fontFamily: "FuturaBkBTBook1",
+      border: "none",
+      borderRadius: "999px",
+      padding: isMobile ? "7px 18px" : "8px 24px",
+      fontSize: isMobile ? "0.85em" : "0.65em",
+      cursor: "pointer",
+      letterSpacing: "0.5px",
+      textTransform: "uppercase",
+      transition: "all 0.25s ease",
+      boxShadow: "0 6px 14px rgba(0,0,0,0.18)",
     };
 
-    const handleHover = e => {
-      e.currentTarget.style.backgroundColor = '#707221';
-      e.currentTarget.style.color = '#fff';
-      e.currentTarget.style.transform = 'scale(1.05)';
-    };
-    const handleOut = e => {
-      e.currentTarget.style.backgroundColor = '#D8DE3E';
-      e.currentTarget.style.color = '#000';
-      e.currentTarget.style.transform = 'scale(1)';
+    const rightStyle = {
+      width: isMobile ? "100%" : "46%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      color: "#666",
+      marginTop: isMobile ? "0" : "-40px",
     };
 
-    const textStyle = {
-      width: isMobile ? '90%' : '40%',
-      textAlign: 'left',
-      lineHeight: '1.6em',
+    const ulStyle = {
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+      width: "100%",
+    };
+
+    const liStyle = {
+      display: "flex",
+      alignItems: "flex-start",
+      gap: isMobile ? "8px" : "10px",
+      color: "#6c6c6c",
+      fontFamily: "FuturaBkBTBook1",
+      fontSize: isMobile ? "0.85rem" : "0.8rem",
+      textAlign: "left",
+      lineHeight: "20px",
+    };
+
+    const tickStyle = {
+      color: "#ff6d57",
+      fontSize: isMobile ? "1.05rem" : "1.4rem",
+      lineHeight: 1,
+      fontFamily: "FuturaBkBTBook1",
+      marginTop: isMobile ? "1px" : "0px",
+      flexShrink: 0,
+      fontWeight: "bold",
+    };
+
+    const handleHover = (e) => {
+      e.currentTarget.style.backgroundColor = "#ff6555";
+      e.currentTarget.style.color = "#fff";
+      e.currentTarget.style.transform = "scale(1.04)";
+    };
+
+    const handleOut = (e) => {
+      e.currentTarget.style.backgroundColor = "#ff6555";
+      e.currentTarget.style.color = "#1c1c1c";
+      e.currentTarget.style.transform = "scale(1)";
     };
 
     return (
       <div style={containerStyle}>
-        {/* 🔹 Imagen principal + botón */}
-        <div style={imageContainer}>
-          <img src={ImgVip} alt="VIP FULL" style={imgStyle} />
+        <div style={middleStyle}>
+          <img
+            src={fondoMedio}
+            alt="Fondo VIP Full Standing Ruta 9"
+            style={bgStyle}
+          />
 
-          <a
-            href="https://qlokura.tv/evento/VIP-FULL-STANDING-QLK-FEST/8241" // 🔗 reemplazá con el link real de compra
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              style={buttonStyle}
-              onMouseOver={handleHover}
-              onMouseOut={handleOut}
-            >
-              COMPRAR AQUÍ
-            </button>
-          </a>
-        </div>
+          <div style={contentStyle}>
+            <div style={leftStyle}>
+              <img
+                src={tituloVip}
+                alt="VIP Full Standing Ruta 9"
+                style={titleStyle}
+              />
 
-        {/* 🔹 Texto descriptivo */}
-        <div style={textStyle}>
-          <h2
-            style={{
-              fontWeight: 'bold',
-              fontSize: '1.6em',
-              marginBottom: '10px',
-            }}
-          >
-            Sentí la energía bien cerca del escenario
-          </h2>
+              <a
+                href="https://www.edenentradas.ar/event/festival-kilometro-vipstnading"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <button
+                  style={buttonStyle}
+                  onMouseOver={handleHover}
+                  onMouseOut={handleOut}
+                >
+                  Comprar aquí
+                </button>
+              </a>
+            </div>
 
-          <p
-            style={{
-              fontWeight: 'bold',
-              fontSize: '1em',
-              fontFamily: 'FontsFree-Net-Druk-Wide-Bold',
-            }}
-          >
-            Con tu entrada{' '}
-            <span
-              style={{
-                color: '#D8DE3E',
-                fontFamily: 'FontsFree-Net-Druk-Wide-Bold',
-              }}
-            >
-              VIP FULL
-            </span>{' '}
-            disfrutás de:
-          </p>
+            <div style={rightStyle}>
+              <ul style={ulStyle}>
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>Ingreso por acceso diferenciado</span>
+                </li>
 
-          <ul
-            style={{
-              listStyle: 'disc',
-              marginLeft: '20px',
-              marginBottom: '10px',
-            }}
-          >
-            <li>Ingreso por acceso diferenciado</li>
-            <li>Ubicación destacada frente al escenario</li>
-            <li>Baños exclusivos</li>
-            <li>Barras preferenciales</li>
-            <li>2 consumiciones de bebida incluidas</li>
-            <li>Acceso al patio gastronómico (no incluye consumición)</li>
-            <li>
-              Zonas de experiencias exclusivas con sponsors y marcas aliadas
-            </li>
-          </ul>
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>Ubicación destacada frente al escenario</span>
+                </li>
 
-          <p
-            style={{
-              fontStyle: 'italic',
-              color: 'white',
-              marginTop: '10px',
-              fontFamily: 'FontsFree-Net-Druk-Wide-Bold',
-            }}
-          >
-            La combinación perfecta entre comodidad, vista y experiencia.
-          </p>
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>Barras preferenciales</span>
+                </li>
+
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>Baños preferenciales</span>
+                </li>
+
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>Acceso al patio gastronómico con food trucks</span>
+                </li>
+
+                <li style={liStyle}>
+                  <span style={tickStyle}>✓</span>
+                  <span>
+                    Acceso a las zonas de experiencias con sponsors y marcas
+                    aliadas
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     );

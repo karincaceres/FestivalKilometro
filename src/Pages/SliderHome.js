@@ -1,119 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import "./Main.css";
 
-import Background from '../assets/Fondos/fondo1.png';
-import BackgroundR from '../assets/Fondos/fondoV.png';
+import slide1 from "../assets/Slider/slide-1.png";
+import slide2 from "../assets/Slider/slide-2.png";
+import slide3 from "../assets/Slider/slide-3.png";
+import mobileSlide1 from "../assets/Slider/mobile-slide-1.png";
+import mobileSlide2 from "../assets/Slider/mobile-slide-2.png";
+import mobileSlide3 from "../assets/Slider/mobile-slide-3.png";
+import mobileSlide4 from "../assets/Slider/mobile-slide-4.png";
+import mobileSlide5 from "../assets/Slider/mobile-slide-5.png";
 
-// 🖼️ IMÁGENES DESKTOP (1920x600)
-import img1 from '../assets/Slider/1920 x 600/1-1920x600px-general.png';
-import img2 from '../assets/Slider/1920 x 600/1-1920x600px.png';
-import img3 from '../assets/Slider/1920 x 600/2-1920x600px.png';
+import background_h from "../assets/Fondos/fondo1.png"
+import background_v from "../assets/Fondos/fondoV.png"
 
-import img4 from '../assets/Slider/1920 x 600/4-1920x600px.png';
-import img5 from '../assets/Slider/1920 x 600/5-1920x600px.png';
-import img6 from '../assets/Slider/1920 x 600/6-1920x600px.png';
-import img7 from "../assets/Slider/1920 x 600/7-1920x600px.png";
-// 🖼️ IMÁGENES TABLET (1280x400)
-import img1M from '../assets/Slider/1280 x 400/1-1280x400px-general.png';
-import img2M from '../assets/Slider/1280 x 400/1-1280x400px.png';
-import img3M from '../assets/Slider/1280 x 400/2-1280x400px.png';
+import Footer from "./Footer.js";
+class SliderHome extends React.Component {
+  render() {
+    const isMobile = window.innerWidth <= 768;
+    const headerHeight = 80; // purple bar (60px) + subtitle bar (~14px)
+    const footerHeight = isMobile ? 160 : 70;
+    const sliderHeight = `calc(100vh - ${headerHeight + footerHeight}px)`;
 
-import img4M from '../assets/Slider/1280 x 400/4-1280x400px.png';
-import img5M from '../assets/Slider/1280 x 400/5-1280x400px.png';
-import img6M from '../assets/Slider/1280 x 400/6-1280x400px.png';
-import img7M from "../assets/Slider/1280 x 400/7-1280x400px.png";
-// 🖼️ IMÁGENES MOBILE (500x500)
-import img1P from '../assets/Slider/500 x 500/1-500x500px-general1.png';
-import img2P from '../assets/Slider/500 x 500/1-500x500px-general2.png';
-import img3P from '../assets/Slider/500 x 500/1-500x500px.png';
-import img4P from '../assets/Slider/500 x 500/2-500x500px.png';
-import img5P from '../assets/Slider/500 x 500/4-500x500px.png';
-import img6P from '../assets/Slider/500 x 500/5-500x500px.png';
-import img7P from '../assets/Slider/500 x 500/6-500x500px.png';
-import img8P from "../assets/Slider/500 x 500/7-500x500px.png";
-
-import Footer from './Footer.js';
-import './Main.css';
-
-const SliderHome = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    const handleResize = () =>
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const isMobile = windowSize.width <= 768;
-  const isTablet = windowSize.width > 768 && windowSize.width <= 1280;
-  const Back = isMobile ? BackgroundR : Background;
-
-  // 🔹 Selección automática de imágenes según resolución
-  let slides = [];
-
-  if (isMobile) {
-    slides = [img1P, img2P, img3P, img4P, img5P, img6P, img7P, img8P];
-  } else if (isTablet) {
-    slides = [img1M, img2M, img3M, img4M, img5M, img6M, img7M];
-  } else {
-    slides = [img1, img2, img3, img4, img5, img6, img7];
-  }
-
-  // 🔹 Alturas base
-  const headerHeight = 10; // vh
-  const footerHeight = isMobile ? 12 : 25; // vh
-  const sliderHeight = 100 - headerHeight - footerHeight;
-
-  const sliderContainerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: `${sliderHeight}vh`,
-    width: '100%',
-    overflow: 'hidden',
-    marginTop: isMobile ? '10px' : '80px',
-  };
-
-  const imageStyle = {
-    width: '100%',
-    height: 'auto',
-    objectFit: 'cover',
-    objectPosition: 'center',
-  };
-
-  return (
-    <div
-      style={{
-        backgroundImage: `url(${Back})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
-      <div style={sliderContainerStyle}>
+    const desktopSlides = [slide1, slide2, slide3];
+    const mobileSlides = [mobileSlide1, mobileSlide2, mobileSlide3, mobileSlide4, mobileSlide5];
+    const slides = isMobile ? mobileSlides : desktopSlides;
+ 	const Back = isMobile ? background_v : background_h;
+    return (
+      <div style={{ marginTop:headerHeight,  backgroundImage: `url(${Back})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center' , height:'100vh'}}>
         <Carousel
-          className="custom-carousel"
-          pause="hover"
-          indicators={true}
-          controls={true}
+          indicators={isMobile}
+          controls={!isMobile}
           interval={4000}
-          fade>
-          {slides.map((img, index) => (
-            <Carousel.Item key={index}>
-              <img src={img} alt={`Slide ${index + 1}`} style={imageStyle} />
+          style={{ height: "100%" }}
+        >
+          {slides.map((src, i) => (
+            <Carousel.Item key={i} style={{ height: sliderHeight }}>
+              <img
+                src={src}
+                alt={`slide-${i + 1}`}
+                style={{
+                  width: "100%",
+                  height: sliderHeight,
+                  objectFit: isMobile ? "contain" : "contain",
+                  objectPosition: "center",
+
+                }}
+              />
             </Carousel.Item>
           ))}
         </Carousel>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SliderHome;

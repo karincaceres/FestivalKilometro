@@ -1,10 +1,11 @@
-import React from 'react';
-import ImgTitulo from '../assets/titulos/puntosdeventa.png';
-import ImgFisico from '../assets/titulos/fisico.png';
-import ImgOnline from '../assets/titulos/Online.png';
-import Background from '../assets/Fondos/fondo1.png';
-import BackgroundR from '../assets/Fondos/fondoV.png';
-import './Main.css';
+import React from "react";
+import Background from "../assets/Fondos/fondo1.png";
+import BackgroundR from "../assets/Fondos/fondoV.png";
+import fondoVenta from "../assets/PuntosVentas/venta.png";
+import tituloVenta from "../assets/PuntosVentas/tit_venta.png";
+import botonEden from "../assets/PuntosVentas/bot_eden.png";
+import iconoFisico from "../assets/PuntosVentas/punto_fisico.png"; // <- ajustá nombre si cambia
+import "./Main.css";
 
 class PuestoVenta extends React.Component {
   render() {
@@ -12,203 +13,230 @@ class PuestoVenta extends React.Component {
     const Back = isMobile ? BackgroundR : Background;
 
     const containerStyle = {
-      minHeight: '100vh',
       backgroundImage: `url(${Back})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      color: 'white',
-      padding: isMobile ? '40px 15px' : '60px',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingTop: isMobile ? "110px" : "120px",
+      paddingBottom: isMobile ? "130px" : "170px",
+      boxSizing: "border-box",
+      position: "relative",
+      overflow: "hidden",
+    };
+
+    const middleStyle = {
+      position: "relative",
+      width: "100vw",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginLeft: "calc(50% - 50vw)",
+      marginRight: "calc(50% - 50vw)",
+    };
+
+    const bgStyle = {
+      width: "100vw",
+      height: "100vh",
+      display: "block",
+      objectFit: "cover",
+      userSelect: "none",
+      pointerEvents: "none",
     };
 
     const contentStyle = {
-      display: 'flex',
-      flexDirection: isMobile ? 'column' : 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: isMobile ? '30px' : '50px',
-      width: '100%',
-      maxWidth: '1200px',
-      marginTop: isMobile ? '50px' : '-60px',
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: isMobile ? "24px" : "26px",
+      padding: isMobile ? "20px 18px" : "20px 46px",
+      boxSizing: "border-box",
     };
 
-    const imgBox = {
-      position: 'relative',
-      width: isMobile ? '100%' : '40%',
-      borderRadius: '8px',
-      overflow: 'visible', // ✅ cambiamos a visible para que no corte nada
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      background: 'transparent',
+    const leftStyle = {
+      width: isMobile ? "100%" : "36%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: isMobile ? "center" : "flex-end",
+      marginTop: isMobile ? "-200px" : "-150px",
     };
 
-    const baseImgStyle = {
-      width: '100%',
-      height: 'auto',
-      objectFit: 'contain',
-      display: 'block',
+    const centerStyle = {
+      width: isMobile ? "100%" : "26%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: isMobile ? "0" : "-150px",
+      textAlign: "center",
     };
 
-    const imgTituloStyle = {
-      width: isMobile ? '100%' : '100%',
-      height: 'auto',
-      objectFit: 'contain',
-      display: 'block',
-      margin: isMobile ? '10px auto 0 auto' : '0',
+    const rightStyle = {
+      width: isMobile ? "100%" : "24%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: isMobile ? "center" : "flex-start",
+      justifyContent: "center",
+      textAlign: isMobile ? "center" : "left",
+      marginTop: isMobile ? "0" : "-150px",
     };
 
-    const overlayFisico = {
-      position: 'absolute',
-      top: '12%', // mantenemos alto
-      left: 0,
-      width: '100%',
-      // ✅ le damos más espacio para evitar cortes
-      minHeight: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      padding: '15px 20px 40px 20px', // más padding inferior
-      textAlign: 'center',
-      color: 'white',
-      boxSizing: 'border-box',
+    const titleStyle = {
+      width: isMobile ? "78%" : "88%",
+      maxWidth: isMobile ? "360px" : "620px",
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+    };
+
+    const subtitleStyle = {
+      fontFamily: "Blogh",
+      fontSize: isMobile ? "1.05em" : "1.6em",
+      color: "#fff",
+      marginBottom: isMobile ? "10px" : "14px",
+      textTransform: "uppercase",
+      lineHeight: 1,
+    };
+
+    const edenLinkStyle = {
+      display: "flex",
+      justifyContent: "center",
+      width: isMobile ? "100%" : "auto",
+      textDecoration: "none",
+      transition: "transform 0.25s ease",
+    };
+
+    const edenImgStyle = {
+      width: isMobile ? "62vw" : "78%",
+      maxWidth: isMobile ? "260px" : "360px",
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+      cursor: "pointer",
+    };
+
+    const fisicoTopStyle = {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: isMobile ? "center" : "flex-start",
+      gap: "10px",
+      marginBottom: "8px",
+      width: "100%",
+    };
+
+    const fisicoIconStyle = {
+      width: isMobile ? "70px" : "56px",
+      height: "auto",
+      objectFit: "contain",
+      display: "block",
+    };
+
+    const fisicoTitleStyle = {
+      fontFamily: "Blogh",
+      fontSize: isMobile ? "2em" : "1.6em",
+      color: "#fff",
+      lineHeight: 1,
+      textTransform: "uppercase",
+    };
+
+    const locationNameStyle = {
+      fontFamily: "Blogh",
+      fontSize: isMobile ? "1.7em" : "1.35em",
+      color: "#63e6ff",
+      lineHeight: 1.1,
+      marginBottom: "4px",
     };
 
     const textStyle = {
-      fontSize: isMobile ? '1.2em' : '1em',
-      lineHeight: isMobile ? '1.3em' : '1.2em',
-      marginBottom: '8px',
-		maxWidth: '90%',
-	  marginLeft:'-30px'
+      fontFamily: "FuturaBkBTBook1",
+      fontSize: isMobile ? "0.88em" : "1em",
+      color: "#fff",
+      lineHeight: 1.2,
+      margin: 0,
     };
 
-    const mapButtonStyle = {
-      display: 'inline-block',
-      border: '1px solid #D8DE3E',
-      color: 'white',
-      fontSize: isMobile ? '1em' : '1em',
-      padding: '1px 9px',
-      marginTop: '4px', // leve ajuste para espaciarlo del texto
-      textDecoration: 'none',
-      transition: '0.3s',
+    const handleHover = (e) => {
+      e.currentTarget.style.transform = "scale(1.04)";
+    };
+
+    const handleOut = (e) => {
+      e.currentTarget.style.transform = "scale(1)";
     };
 
     return (
       <div style={containerStyle}>
-        <div style={contentStyle}>
-          {/* 🔹 Imagen 1: PUNTOS DE VENTA */}
-          <div
-            style={{
-              background: "transparent",
-              overflow: "visible",
-              width: isMobile ? "100%" : "40%",
-            }}
-          >
-            <img src={ImgTitulo} alt="Puntos de Venta" style={imgTituloStyle} />
-          </div>
+        <div style={middleStyle}>
+          <img src={fondoVenta} alt="Fondo venta de entradas" style={bgStyle} />
 
-          {/* 🔹 Imagen 2: FÍSICO */}
-          <div style={imgBox}>
-            <img src={ImgFisico} alt="Físico" style={baseImgStyle} />
-            <div style={overlayFisico}>
-              <p
-                style={{
-                  ...textStyle,
-                  textAlign: "left",
-                  color: "#D8DE3E",
-                  fontWeight: "bold",
-                  marginTop: "10px",
-                }}
-              >
-                ADMINISTRACIÓN
-                <br />
-                JOCKEY CLUB - RÍO IV
-              </p>
-              <p style={textStyle}>
-                Av. Pres.Perón Oeste 1600-Río IV
-                <br />
-                Lunes a Viernes de 8 a 17 Hs.
-              </p>
-              <a
-                href="https://share.google/m95kkfz5MVfQfqC1g"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={mapButtonStyle}
-              >
-                Ver ubicación en Google Maps
-              </a>
+          <div style={contentStyle}>
+            {/* COLUMNA 1 */}
+            <div style={leftStyle}>
+              <img
+                src={tituloVenta}
+                alt="Venta de entradas"
+                style={titleStyle}
+              />
+            </div>
 
-              <p
-                style={{
-                  ...textStyle,
-                  textAlign: "left",
-                  color: "#D8DE3E",
-                  fontWeight: "bold",
-                  marginTop: "12px",
-                }}
-              >
-                FRIDEZA
-              </p>
-              <p style={textStyle}>
-                Castelli 1926 (mts Ruta A005)
-                <br />
-                Lunes a Sábados 8 a 20:30 Hs.
-                <br />
-                Domingos 8 a 13 Hs.
-              </p>
+            {/* COLUMNA 2 */}
+            <div style={centerStyle}>
+              <div style={subtitleStyle}>Digital</div>
+
               <a
-                href="https://maps.app.goo.gl/7T9fnqPsXz4XWmq78"
+                href="https://www.edenentradas.ar/event/festival-kilometro-wh"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={mapButtonStyle}
+                style={edenLinkStyle}
+                onMouseOver={handleHover}
+                onMouseOut={handleOut}
               >
-                Ver ubicación en Google Maps
+                <img src={botonEden} alt="EDEN Entradas" style={edenImgStyle} />
               </a>
-              <p
-                style={{
-                  ...textStyle,
-                  textAlign: "left",
-                  color: "#D8DE3E",
-                  fontWeight: "bold",
-                  marginTop: "12px",
-                }}
-              >
-                PASEO RIBERA SHOPPING
-              </p>
-              <p style={textStyle}>
-                Sobremonte 80
-                <br />
-                Lunes a Sábados 14 a 21:00 Hs.
-                <br />
-              </p>
+            </div>
+
+            {/* COLUMNA 3 */}
+            {/* COLUMNA 3 */}
+            <div style={rightStyle}>
               <a
-                href="https://maps.app.goo.gl/RFQxoTruB6htGXSA6"
+                href="https://maps.app.goo.gl/cWsSGFoL1MjWwjZGA"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={mapButtonStyle}
+                style={{
+                  textDecoration: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: isMobile ? "center" : "flex-start",
+                  justifyContent: "center",
+                  textAlign: isMobile ? "center" : "left",
+                  width: "100%",
+                  transition: "transform 0.25s ease",
+                  cursor: "pointer",
+                }}
+                onMouseOver={handleHover}
+                onMouseOut={handleOut}
               >
-                Ver ubicación en Google Maps
+                <div style={fisicoTopStyle}>
+                  <img
+                    src={iconoFisico}
+                    alt="Punto de venta físico"
+                    style={fisicoIconStyle}
+                  />
+                  <div style={fisicoTitleStyle}>Físico</div>
+                </div>
+
+                <div style={locationNameStyle}>Disquerías EDEN</div>
+                <p style={textStyle}>Obispo Trejo 15, subsuelo, local 3</p>
+                <p style={textStyle}>Lunes a Viernes de 09:00 a 18:30 hs.</p>
+                <p style={textStyle}>Sábados de 09:00 a 13:00 hs.</p>
               </a>
             </div>
           </div>
-
-          {/* 🔹 Imagen 3: ONLINE */}
-          <a
-            href="https://qlokura.tv/?QLOKURAFEST=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              ...imgBox,
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
-          >
-					<img src={ImgOnline} alt="Online" style={{...baseImgStyle, marginTop:isMobile?'150px':'' }} />
-          </a>
         </div>
       </div>
     );
