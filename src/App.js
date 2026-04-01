@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 // Tus páginas
 import HomeView from './Pages/HomeView';
 import Evento from './Pages/Evento';
+import Fiesta from "./Pages/Fiesta";
 
 import Contacto from './Pages/Contacto';
 import PuestoVenta from './Pages/PuestoVenta';
@@ -40,14 +41,15 @@ function App() {
 
           <Switch>
             {/* Rutas principales */}
-            <Route exact path="/HomeView" component={HomeView} />
+            <Route exact path="/" component={HomeView} />
 
             <Route path="/evento" component={Evento} />
             <Route path="/sectores" component={Sectores} />
             <Route path="/contacto" component={Contacto} />
             <Route path="/puestoventa" component={PuestoVenta} />
             <Route path="/grilla" component={Grilla} />
-            <Route path="/" component={Cargando} />
+            <Route path="/cargando" component={Cargando} />
+            <Route path="/fiesta" component={Fiesta} />
 
             {/* Rutas de entradas */}
             <Route path="/entrada-general" component={EntradaGeneral} />
