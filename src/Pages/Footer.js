@@ -1,11 +1,11 @@
 import { Component } from "react";
 import bocaImg from "../assets/boca.png";
 import fondoSeguinos from "../assets/fondo_Seguinos.png";
+import igIcon from "../assets/ig.png";
 import logosProducen from "../assets/logos_producen.png";
 import seguinosImg from "../assets/seguinos.png";
-import "./Main.css";
-import igIcon from "../assets/ig.png";
 import tiktokIcon from "../assets/tiktok.png";
+import "./Main.css";
 
 class Footer extends Component {
   constructor(props) {
@@ -72,7 +72,6 @@ class Footer extends Component {
           flexDirection: "column",
           alignItems: "center",
           minWidth: isMobile ? "58px" : "90px",
-
         }}
       >
         <div
@@ -89,7 +88,7 @@ class Footer extends Component {
 
         <div
           style={{
-            fontFamily: "FuturaBkBTBook1",
+            fontFamily: "Halogen-Regular",
             fontSize: isMobile ? "0.62em" : "0.95em",
             color: "#fff",
             marginTop: isMobile ? "2px" : "4px",
@@ -104,7 +103,6 @@ class Footer extends Component {
   }
 
   renderSocialBlock(isMobile) {
-
     return (
       <div
         style={{
@@ -112,8 +110,8 @@ class Footer extends Component {
           alignItems: "center",
           justifyContent: "center",
           gap: isMobile ? "20px" : "12px",
-		  width: "100%",
-		  marginTop:'-10px',
+          width: "100%",
+          marginTop: "-10px",
         }}
       >
         <img
@@ -218,8 +216,7 @@ class Footer extends Component {
     );
   }
 
-	renderDesktopFooter(days, hours, min, sec) {
-
+  renderDesktopFooter(days, hours, min, sec) {
     return (
       <>
         <div
@@ -258,7 +255,7 @@ class Footer extends Component {
             <div
               style={{
                 fontFamily: "Blogh",
-                fontSize:  "3.2em",
+                fontSize: "3.2em",
                 color: "#fff",
                 whiteSpace: "nowrap",
                 lineHeight: 1,
@@ -274,8 +271,8 @@ class Footer extends Component {
                 alignItems: "flex-start",
                 justifyContent: "center",
                 gap: "16px",
-				flexWrap: "nowrap",
-				marginTop:'20px'
+                flexWrap: "nowrap",
+                marginTop: "20px",
               }}
             >
               {this.renderTimeBlock(days, "DÍAS")}

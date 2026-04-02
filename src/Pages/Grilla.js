@@ -1,6 +1,6 @@
 import React from "react";
-import fechaImg from "../assets/fecha.png";
 import bajadaImg from "../assets/bajada.png";
+import fechaImg from "../assets/fecha.png";
 import Background from "../assets/Fondos/fondo1.png";
 import BackgroundR from "../assets/Fondos/fondoV.png";
 import "./Main.css";
@@ -10,23 +10,23 @@ class Grilla extends React.Component {
     const isMobile = window.innerWidth <= 768;
     const Back = isMobile ? BackgroundR : Background;
 
-const sectionStyle = {
-  width: "100vw",
-  minHeight: "100vh",
-  backgroundImage: `url(${Back})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  backgroundRepeat: "no-repeat",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  paddingTop: isMobile ? "110px" : "120px",
-  paddingBottom: isMobile ? "130px" : "170px",
-  paddingLeft: isMobile ? "16px" : "60px",
-  paddingRight: isMobile ? "16px" : "60px",
-  boxSizing: "border-box",
-  overflow: "hidden",
-};
+    const sectionStyle = {
+      width: "100vw",
+      minHeight: "100vh",
+      backgroundImage: `url(${Back})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      paddingTop: isMobile ? "110px" : "120px",
+      paddingBottom: isMobile ? "130px" : "170px",
+      paddingLeft: isMobile ? "16px" : "60px",
+      paddingRight: isMobile ? "16px" : "60px",
+      boxSizing: "border-box",
+      overflow: "hidden",
+    };
     const contentStyle = {
       width: "100%",
       maxWidth: "1400px",
@@ -55,7 +55,7 @@ const sectionStyle = {
     };
 
     const textStyle = {
-      fontFamily: "FuturaBkBTBook1, sans-serif",
+      fontFamily: "Halogen-Regular, sans-serif",
       color: "#ffffff",
       fontSize: isMobile ? "0.9rem" : "0.8rem",
       lineHeight: isMobile ? "1.4" : "1.2",
@@ -67,14 +67,13 @@ const sectionStyle = {
       fontFamily: "Blogh",
       fontSize: isMobile ? "1.2rem" : "1.2rem",
       color: "#ffffff",
-	};
+    };
 
-	      const boldStyleBlue = {
-          fontFamily: "FuturaBkBTBook1",
-          fontSize: isMobile ? "1rem" : "1rem",
-          color: "#000",
-        };
-
+    const boldStyleBlue = {
+      fontFamily: "Halogen-Regular",
+      fontSize: isMobile ? "1rem" : "1rem",
+      color: "#000",
+    };
 
     const celesteStyle = {
       color: "#63e6ff",

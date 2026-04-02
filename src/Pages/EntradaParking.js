@@ -64,7 +64,7 @@ class EntradaParking extends React.Component {
       justifyContent: "center",
       alignItems: isMobile ? "center" : "flex-end",
       color: "#666",
-      fontFamily: "FuturaBkBTBook1",
+      fontFamily: "Halogen-Regular",
       marginTop: isMobile ? "0" : "-55px",
       textAlign: isMobile ? "center" : "right",
     };
@@ -90,7 +90,7 @@ class EntradaParking extends React.Component {
     const buttonStyle = {
       backgroundColor: "#ff6555",
       color: "#fff",
-      fontFamily: "FuturaBkBTBook1",
+      fontFamily: "Halogen-Regular",
       border: "none",
       borderRadius: "999px",
       padding: isMobile ? "7px 18px" : "8px 24px",
@@ -112,7 +112,7 @@ class EntradaParking extends React.Component {
     const liStyle = {
       position: "relative",
       color: "#6c6c6c",
-      fontFamily: "FuturaBkBTBook1",
+      fontFamily: "Halogen-Regular",
       fontSize: isMobile ? "0.75rem" : ".8rem",
       lineHeight: isMobile ? "1.15" : "0.98",
       marginBottom: isMobile ? "10px" : "4px",

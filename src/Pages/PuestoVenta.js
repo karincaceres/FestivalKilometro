@@ -1,10 +1,10 @@
 import React from "react";
 import Background from "../assets/Fondos/fondo1.png";
 import BackgroundR from "../assets/Fondos/fondoV.png";
-import fondoVenta from "../assets/PuntosVentas/venta.png";
-import tituloVenta from "../assets/PuntosVentas/tit_venta.png";
 import botonEden from "../assets/PuntosVentas/bot_eden.png";
 import iconoFisico from "../assets/PuntosVentas/punto_fisico.png"; // <- ajustá nombre si cambia
+import tituloVenta from "../assets/PuntosVentas/tit_venta.png";
+import fondoVenta from "../assets/PuntosVentas/venta.png";
 import "./Main.css";
 
 class PuestoVenta extends React.Component {
@@ -154,7 +154,7 @@ class PuestoVenta extends React.Component {
     };
 
     const textStyle = {
-      fontFamily: "FuturaBkBTBook1",
+      fontFamily: "Halogen-Regular",
       fontSize: isMobile ? "0.88em" : "1em",
       color: "#fff",
       lineHeight: 1.2,
