@@ -1,23 +1,22 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'FuturaHvBTHeavy', sans-serif;
+  font-family: "Halogen-Regular", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New','Montserrat',
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", "Montserrat",
     monospace;
-
 }
-input[type=text]:focus {
+input[type="text"]:focus {
   border: 3px solid #555;
 }
-p{
+p {
   line-height: 1.2;
 }
-li{
+li {
   line-height: 1.2;
-
 }
