@@ -1,38 +1,19 @@
 @font-face {
   font-family: "Blogh";
-  src:
-    local("Blogh"),
-    url("../assets/fonts/Blogh.otf") format("opentype");
+  src:url("../assets/fonts/Blogh.otf") format("opentype");
 }
 @font-face {
   font-family: "Halogen-Regular";
-  src:
-    local("Halogen-Regular"),
-    url("../assets/fonts/Halogen-Regular.otf") format("opentype");
+  src:url("../assets/fonts/Halogen-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "MonumentExtended-Ultrabold";
-  src:
-    local("MonumentExtended-Ultrabold"),
-    url("../assets/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  src:url("../assets/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
 }
-@font-face {
-  font-family: "RussoOne-Regular";
-  src:
-    local("RussoOne-Regular"),
-    url("../assets/fonts/RussoOne-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "MonumentExtended-Ultrabold";
-  src:
-    local("MonumentExtended-Ultrabold"),
-    url("../assets/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
-}
+
 @font-face {
   font-family: "Halogen-Black";
-  src:
-    local("Halogen-Black"),
-    url("../assets/fonts/Halogen-Black.otf") format("opentype");
+  src:url("../assets/fonts/Halogen-Black.otf") format("opentype");
 }
 
 html,
