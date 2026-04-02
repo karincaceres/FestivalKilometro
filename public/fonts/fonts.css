@@ -1,16 +1,17 @@
 @font-face {
   font-family: "Blogh";
-  src: local('Blogh'),
-    url('./Blogh.otf') format("opentype");
-}
-@font-face {
-  font-family: "FuturaBkBTBook1";
-  src: local("Halogen-Regular"),
-    url('./Halogen-Regular.otf') format("opentype");
-}
-@font-face {
-  font-family: "MonumentExtended-Ultrabold";
-  src: local("MonumentExtended-Ultrabold"),
-    url('./MonumentExtended-Ultrabold.otf') format("opentype");
+  src: url("./Blogh.otf") format("opentype");
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "FuturaBkBTBook1";
+  src: url("./FuturaBkBTBook1.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonumentExtended-Ultrabold";
+  src: url("./MonumentExtended-Ultrabold.otf") format("opentype");
+  font-display: swap;
+}
