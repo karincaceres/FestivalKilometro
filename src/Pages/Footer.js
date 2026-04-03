@@ -1,16 +1,18 @@
-// Footer.js
-import React, { Component } from 'react';
-import './Main.css';
-import estrellaIG from '../assets/Botones/boton_IG.png'; // 🌟 Imagen con IG
-import produceQL from '../assets/Botones/produce.png'; // 🎬 Imagen "Produce Q'loxura"
+import { Component } from "react";
+import bocaImg from "../assets/boca.png";
+import fondoSeguinos from "../assets/fondo_Seguinos.png";
+import igIcon from "../assets/ig.png";
+import logosProducen from "../assets/logos_producen.png";
+import seguinosImg from "../assets/seguinos.png";
+import tiktokIcon from "../assets/tiktok.png";
+import "./Main.css";
 
 class Footer extends Component {
   constructor(props) {
     super(props);
 
-    const eventDate = new Date(localStorage.getItem('eventDate'));
-    const finEvento = new Date(localStorage.getItem('finevento'));
-    const now = new Date();
+    const eventDate = new Date(localStorage.getItem("eventDate"));
+    const finEvento = new Date(localStorage.getItem("finevento"));
 
     this.state = {
       days: 0,
@@ -18,10 +20,9 @@ class Footer extends Component {
       min: 0,
       sec: 0,
       stopped: false,
+      evento: false,
       eventDay: eventDate,
       finEvento: finEvento,
-      diaActual: now,
-      evento: false,
     };
   }
 
@@ -37,249 +38,427 @@ class Footer extends Component {
   timer = () => {
     const now = new Date();
     const { eventDay, finEvento } = this.state;
-
     const secsToStart = Math.floor((eventDay.getTime() - now.getTime()) / 1000);
     const secsToEnd = Math.floor((finEvento.getTime() - now.getTime()) / 1000);
 
-    // 🔹 Evento terminado
     if (secsToEnd <= 0) {
-      this.setState({ stopped: true, evento: false, diaActual: now });
+      this.setState({ stopped: true, evento: false });
       clearInterval(this.interval);
       return;
     }
 
-    // 🔹 Evento en curso
     if (secsToStart <= 0 && secsToEnd > 0) {
-      this.setState({ stopped: true, evento: true, diaActual: now });
+      this.setState({ stopped: true, evento: true });
       return;
     }
 
-    const seconds = secsToStart;
-    const days = Math.floor(seconds / 86400);
-    const hoursLeft = seconds - days * 86400;
+    const days = Math.floor(secsToStart / 86400);
+    const hoursLeft = secsToStart - days * 86400;
     const hours = Math.floor(hoursLeft / 3600);
     const minutesLeft = hoursLeft - hours * 3600;
-    const minutes = Math.floor(minutesLeft / 60);
-    const remainingSeconds = seconds % 60;
+    const min = Math.floor(minutesLeft / 60);
+    const sec = secsToStart % 60;
 
-    this.setState({
-      days,
-      hours,
-      min: minutes,
-      sec: parseInt(remainingSeconds, 10),
-      diaActual: now,
-      evento: false,
-      stopped: false,
-    });
+    this.setState({ days, hours, min, sec, stopped: false, evento: false });
   };
 
-  BottomBar = ({ children, bottomOffset }) => (
-    <div
-      style={{
-        position: 'fixed',
-        left: 0,
-        bottom: bottomOffset,
-        width: '100%',
-        zIndex: 2200,
-        padding: '10px 0',
-        background: 'rgba(0, 0, 0, 0.6)',
-        backdropFilter: 'blur(3px)',
-      }}
-    >
-      {children}
-    </div>
-  );
+  renderTimeBlock(value, label) {
+    const isMobile = window.innerWidth <= 768;
+
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          minWidth: isMobile ? "58px" : "90px",
+
+        }}
+      >
+        <div
+          style={{
+            fontFamily: "MonumentExtended-Ultrabold",
+            fontSize: isMobile ? "1.7em" : "2.6em",
+            color: "#fff",
+            lineHeight: 0.9,
+            textAlign: "center",
+          }}
+        >
+          {String(value).padStart(2, "0")}
+        </div>
+
+        <div
+          style={{
+            fontFamily: "Halogen-Regular",
+            fontSize: isMobile ? "0.62em" : "0.95em",
+            color: "#fff",
+            marginTop: isMobile ? "2px" : "4px",
+            textAlign: "center",
+            letterSpacing: "0.5px",
+          }}
+        >
+          {label}
+        </div>
+      </div>
+    );
+  }
+
+  renderSocialBlock(isMobile) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: isMobile ? "20px" : "12px",
+          width: "100%",
+          marginTop: "-10px",
+        }}
+      >
+        <img
+          src={bocaImg}
+          alt="boca"
+          style={{
+            height: isMobile ? "44px" : "86px",
+            objectFit: "contain",
+            flexShrink: 0,
+          }}
+        />
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: isMobile ? "285px" : "320px",
+              maxWidth: "100%",
+              pointerEvents: "auto",
+            }}
+          >
+            <img
+              src={fondoSeguinos}
+              alt="redes"
+              style={{
+                width: "100%",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+
+            <a
+              href="https://www.instagram.com/festivalkilometro"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                position: "absolute",
+                left: isMobile ? "16px" : "34px",
+                top: isMobile ? "13px" : "22px",
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                pointerEvents: "auto",
+              }}
+            >
+              <img
+                src={igIcon}
+                alt="Instagram"
+                style={{
+                  width: isMobile ? "120px" : "130px",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@festival.km"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                position: "absolute",
+                left: isMobile ? "145px" : "180px",
+                top: isMobile ? "13px" : "18px",
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                pointerEvents: "auto",
+              }}
+            >
+              <img
+                src={tiktokIcon}
+                alt="TikTok"
+                style={{
+                  width: isMobile ? "120px" : "120px",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </a>
+          </div>
+
+          <img
+            src={seguinosImg}
+            alt="seguinos"
+            style={{
+              marginTop: isMobile ? "1px" : "-4px",
+              width: isMobile ? "82px" : "130px",
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  renderDesktopFooter(days, hours, min, sec) {
+    return (
+      <>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "8px 34px 10px 34px",
+            boxSizing: "border-box",
+            gap: "18px",
+
+          }}
+        >
+          <div
+            style={{
+              width: "33%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "12px",
+            }}
+          >
+            {this.renderSocialBlock(false)}
+          </div>
+
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "20px",
+              boxSizing: "border-box",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "Blogh",
+                fontSize: "3.2em",
+                color: "#fff",
+                whiteSpace: "nowrap",
+                lineHeight: 1,
+                marginRight: "-20px",
+              }}
+            >
+              FALTAN
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                justifyContent: "center",
+                gap: "16px",
+                flexWrap: "nowrap",
+                marginTop: "20px",
+              }}
+            >
+              {this.renderTimeBlock(days, "DÍAS")}
+              {this.renderTimeBlock(hours, "HORAS")}
+              {this.renderTimeBlock(min, "MINUTOS")}
+              {this.renderTimeBlock(sec, "SEGUNDOS")}
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingBottom: "14px",
+            boxSizing: "border-box",
+          }}
+        >
+          <img
+            src={logosProducen}
+            alt="acompañan"
+            style={{
+              height: "50px",
+              width: "auto",
+              maxWidth: "70%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      </>
+    );
+  }
+
+  renderMobileFooter(days, hours, min, sec) {
+    return (
+      <>
+        <div
+          style={{
+            flex: 1,
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            padding: "6px 10px 0 10px",
+            boxSizing: "border-box",
+            gap: "3px",
+            backgroundColor: "#8800ff",
+          }}
+        >
+          {/* 1. boca + redes */}
+          {this.renderSocialBlock(true)}
+
+          {/* 2. faltan */}
+          <div
+            style={{
+              fontFamily: "Blogh",
+              fontSize: "2.35em",
+              color: "#fff",
+              lineHeight: 1,
+              textAlign: "center",
+              marginTop: "0px",
+            }}
+          >
+            FALTAN
+          </div>
+
+          {/* 3. números */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              gap: "2px",
+              flexWrap: "nowrap",
+              width: "100%",
+            }}
+          >
+            {this.renderTimeBlock(days, "DÍAS")}
+            {this.renderTimeBlock(hours, "HORAS")}
+            {this.renderTimeBlock(min, "MINUTOS")}
+            {this.renderTimeBlock(sec, "SEGUNDOS")}
+          </div>
+        </div>
+
+        {/* 4. logos abajo */}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingBottom: "10px",
+            boxSizing: "border-box",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+          }}
+        >
+          <img
+            src={logosProducen}
+            alt="acompañan"
+            style={{
+              height: "30px",
+              width: "auto",
+              maxWidth: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+      </>
+    );
+  }
 
   render() {
     const isMobile = window.innerWidth <= 768;
-    const bottomOffset = '0';
-    const { stopped, evento } = this.state;
+    const { stopped, evento, days, hours, min, sec } = this.state;
 
-    // 🔹 Si el evento ya terminó → “GRACIAS POR VENIR!”
+    const footerHeight = isMobile ? 185 : 175;
+
+    const containerStyle = {
+      position: "fixed",
+      left: 0,
+      bottom: 0,
+      width: "100%",
+      height: `${footerHeight}px`,
+      zIndex: 50,
+      overflow: "hidden",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      background: "transparent",
+      pointerEvents: "none",
+      backgroundColor: "#8800ff",
+    };
+
     if (stopped && !evento) {
       return (
-        <this.BottomBar bottomOffset={bottomOffset}>
+        <div style={containerStyle}>
           <div
-            className="timeTitle"
             style={{
-              width: '100%',
-              textAlign: 'center',
-              fontWeight: 'bold',
-              fontSize: isMobile ? '1.8em' : '2.5em',
-              color: '#FFFFFF',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontFamily: "Blogh",
+              fontSize: isMobile ? "1.7em" : "2.5em",
+              color: "#fff",
             }}
           >
             ¡GRACIAS POR VENIR!
           </div>
-        </this.BottomBar>
+        </div>
       );
     }
 
-    // 🔹 Si el evento está en curso → “¡EMPEZÓ LA FIESTA!”
     if (stopped && evento) {
       return (
-        <this.BottomBar bottomOffset={bottomOffset}>
+        <div style={containerStyle}>
           <div
             style={{
-              width: '100%',
-              textAlign: 'center',
-              fontWeight: 'bold',
-              fontSize: isMobile ? '1.8em' : '2.5em',
-              color: '#D8DE3E',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontFamily: "Blogh",
+              fontSize: isMobile ? "1.5em" : "2.5em",
+              color: "#fff",
             }}
           >
             ¡EMPEZÓ LA FIESTA!
           </div>
-        </this.BottomBar>
+        </div>
       );
     }
 
-    // 🔹 Footer con contador activo
     return (
-      <this.BottomBar bottomOffset={bottomOffset}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            justifyContent: isMobile ? 'center' : 'space-between',
-            alignItems: 'center',
-            textAlign: 'center',
-            color: 'white',
-            width: '100%',
-            padding: isMobile ? '5px 0' : '0 2vw',
-            height: isMobile ? '25vh' : 'auto', // 👈 1/4 pantalla en mobile
-          }}
-        >
-          {/* 🔹 WEB: estructura horizontal */}
-          {!isMobile && (
-            <>
-              {/* IZQUIERDA: Instagram */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                <a
-                  href="https://www.instagram.com/qlkfest/?hl=es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
-                >
-                  <img src={estrellaIG} alt="Instagram QLK" style={{ width: '50px', cursor: 'pointer' }} />
-                </a>
-                <div
-                  style={{
-                    fontSize: '0.9em',
-                    lineHeight: '1.2em',
-                    color: 'white',
-                    fontWeight: 'bold',
-                    textAlign: 'left',
-                  }}
-                >
-                  Seguí la fiesta, <br />
-                  viví la experiencia, <br />
-                  seguí <span style={{ color: '#D8DE3E' }}>@QLKFest</span>
-                </div>
-              </div>
-
-              {/* CENTRO: Contador horizontal */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '20px',
-                  justifyContent: 'center',
-                  flexWrap: 'wrap',
-                  textAlign: 'center',
-                }}
-              >
-                <div className="timeTitle" style={{ fontWeight: 'bold', fontSize: '1.8em', color: '#fff' }}>
-                  FALTAN
-                </div>
-                {this.renderTimeBlock('days', 'DÍAS')}
-                {this.renderTimeBlock('hours', 'HORAS')}
-                {this.renderTimeBlock('min', 'MINUTOS')}
-                {this.renderTimeBlock('sec', 'SEGUNDOS')}
-              </div>
-
-              {/* DERECHA: Produce Q’loxura */}
-              <a
-                href="https://www.instagram.com/qlokuraok/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}
-              >
-                <img src={produceQL} alt="Produce Q’loxura" style={{ width: '180px', cursor: 'pointer' }} />
-              </a>
-            </>
-          )}
-
-          {/* 🔹 MOBILE: estructura vertical */}
-          {isMobile && (
-            <>
-              {/* FALTAN + contador */}
-              <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-                <div className="timeTitle" style={{ fontWeight: 'bold', fontSize: '2em', color: '#fff' }}>
-                  FALTAN
-                </div>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '20px',
-                    marginTop: '5px',
-                    flexWrap: 'wrap',
-                  }}
-                >
-                  {this.renderTimeBlock('days', 'DIAS')}
-                  {this.renderTimeBlock('hours', 'HORA')}
-                  {this.renderTimeBlock('min', 'MINUTOS')}
-                  {this.renderTimeBlock('sec', 'SEGUNDOS')}
-                </div>
-              </div>
-
-              {/* Fila inferior: IG izq + Produce der */}
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  width: '85%',
-                }}
-              >
-                <a
-                  href="https://www.instagram.com/qlkfest/?hl=es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={estrellaIG} alt="Instagram QLK" style={{ width: '45px', cursor: 'pointer' }} />
-                </a>
-
-                <a
-                  href="https://www.instagram.com/qloxura/?hl=es"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={produceQL} alt="Produce Q’loxura" style={{ width: '130px', cursor: 'pointer' }} />
-                </a>
-              </div>
-            </>
-          )}
-        </div>
-      </this.BottomBar>
-    );
-  }
-
-  renderTimeBlock = (timeUnit, label) => {
-    return (
-      <div style={{ textAlign: 'center', lineHeight: '1em' }}>
-        <div className="timeTitle" style={{ fontSize: '1.6em', fontWeight: 'bold' }}>
-          {this.state[timeUnit]}
-        </div>
-        <div style={{ fontSize: '0.7em', color: '#fff' }}>{label}</div>
+      <div style={containerStyle}>
+        {isMobile
+          ? this.renderMobileFooter(days, hours, min, sec)
+          : this.renderDesktopFooter(days, hours, min, sec)}
       </div>
     );
-  };
+  }
 }
 
 export default Footer;
