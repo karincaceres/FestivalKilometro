@@ -65,19 +65,19 @@ class Grilla extends React.Component {
 
     const boldStyle = {
       fontFamily: "Blogh",
-      fontSize: isMobile ? "1.2rem" : "1.2rem",
+      fontSize: isMobile ? "1.4rem" : "1.2rem",
       color: "#ffffff",
     };
 
     const boldStyleBlue = {
       fontFamily: "Halogen-Regular",
       fontSize: isMobile ? "1rem" : "1rem",
-      color: "#000",
+      color: "#fff",
     };
 
     const celesteStyle = {
       color: "#63e6ff",
-      fontSize: isMobile ? "1.2rem" : "1.2rem",
+      fontSize: isMobile ? "1.4rem" : "1.2rem",
       fontFamily: "Blogh",
     };
 
@@ -115,8 +115,8 @@ class Grilla extends React.Component {
           <div style={rightStyle}>
             <div>
               <p style={textStyle}>
-                <span style={boldStyle}>Kilómetro</span> – Donde te lleva la
-                música, es un festival que propone vivir la música como un
+                <span style={boldStyle}>Kilómetro</span> – Donde la música te
+                lleva, es un festival que propone vivir la música como un
                 recorrido. Un viaje donde cada artista, cada escenario y cada
                 momento representan un nuevo kilómetro dentro de una experiencia
                 colectiva.

@@ -72,6 +72,7 @@ class Footer extends Component {
           flexDirection: "column",
           alignItems: "center",
           minWidth: isMobile ? "58px" : "90px",
+
         }}
       >
         <div
@@ -228,6 +229,7 @@ class Footer extends Component {
             padding: "8px 34px 10px 34px",
             boxSizing: "border-box",
             gap: "18px",
+
           }}
         >
           <div
@@ -322,7 +324,7 @@ class Footer extends Component {
             padding: "6px 10px 0 10px",
             boxSizing: "border-box",
             gap: "3px",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            backgroundColor: "#8800ff",
           }}
         >
           {/* 1. boca + redes */}
@@ -406,6 +408,7 @@ class Footer extends Component {
       justifyContent: "space-between",
       background: "transparent",
       pointerEvents: "none",
+      backgroundColor: "#8800ff",
     };
 
     if (stopped && !evento) {
