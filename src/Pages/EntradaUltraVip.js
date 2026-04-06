@@ -186,7 +186,7 @@ class EntradaUltraVip extends React.Component {
 
                 <li style={liStyle}>
                   <span style={tickStyle}>✓</span>
-                  Parking exclusivo dentro del predio
+                  Parking exclusivo incluido dentro del predio
                 </li>
 
                 <li style={liStyle}>
