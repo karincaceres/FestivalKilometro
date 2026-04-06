@@ -181,13 +181,13 @@ Aguardo disponibilidad y valores.`;
                   <span style={tickStyle}>✓</span>
                 </li>
 
-                <li style={liStyle}>
+                {/* <li style={liStyle}>
                   <span>
                     Sector tipo corral exclusivo y cerrado, que garantiza
                     privacidad y comodidad durante todo el evento
                   </span>
                   <span style={tickStyle}>✓</span>
-                </li>
+                </li> */}
 
                 <li style={liStyle}>
                   <span>
@@ -197,14 +197,14 @@ Aguardo disponibilidad y valores.`;
                   <span style={tickStyle}>✓</span>
                 </li>
 
-                <li style={liStyle}>
+                {/* <li style={liStyle}>
                   <span>
                     Circuito VIP permanente, permitiendo moverse entre
                     estacionamiento, sector de mesas y servicios sin atravesar
                     zonas generales del festival
                   </span>
                   <span style={tickStyle}>✓</span>
-                </li>
+                </li> */}
 
                 <li style={liStyle}>
                   <span>4 accesos a parking exclusivo dentro del predio</span>
@@ -236,13 +236,13 @@ Aguardo disponibilidad y valores.`;
                   <span style={tickStyle}>✓</span>
                 </li>
 
-                <li style={liStyle}>
+                {/* <li style={liStyle}>
                   <span>
                     Bebidas en botellas cerradas (envase original) para mayor
                     comodidad en la mesa
                   </span>
                   <span style={tickStyle}>✓</span>
-                </li>
+                </li> */}
                 <li style={liStyle}>
                   <span>
                     Monto consumible incluido, con 30% destinado a bebidas

@@ -17,7 +17,7 @@ class Contacto extends React.Component {
 
     const instagramHref = "https://www.instagram.com/festivalkilometro";
     const mailHref = "https://mail.google.com/mail/?view=cm&fs=1&to=festivalkometro@gmail.com&su=Consulta%20Festival%20Kil%C3%B3metro";
-    const message = `Hola! 
+    const message = `Hola!
 	Estoy empezando mi recorrido hacia *Festival Kilómetro*
 	¿Me ayudan con la info que necesito?`;
 
@@ -160,7 +160,7 @@ const whatsappWrapperStyle = {
 
             <div style={rightStyle}>
               <p style={{fontFamily:"Halogen-Black", fontSize:'1.3em', color:"#fff", textAlign:'left'}}>
-                NO TE PIERDAS EL RECORRIDO, ESCRIBÍNOS Y TE AYUDAMO!
+                NO TE PIERDAS EN EL RECORRIDO, ESCRIBÍNOS Y TE AYUDAMOS!
               </p>
               <a
                 href={instagramHref}

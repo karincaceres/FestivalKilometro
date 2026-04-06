@@ -73,7 +73,7 @@ class PuestoVenta extends React.Component {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      marginTop: isMobile ? "0" : "-150px",
+      marginTop: isMobile ? "0" : "-170px",
       textAlign: "center",
     };
 
