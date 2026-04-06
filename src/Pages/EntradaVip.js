@@ -40,7 +40,7 @@ class EntradaVip extends React.Component {
 
     const bgStyle = {
       width: "100vw",
-      height: "100vh",
+      height: isMobile ? "100vh" : "",
       display: "block",
       objectFit: "cover",
       userSelect: "none",
@@ -100,7 +100,7 @@ class EntradaVip extends React.Component {
       justifyContent: "center",
       alignItems: "flex-start",
       color: "#666",
-      marginTop: isMobile ? "0" : "-40px",
+      marginTop: isMobile ? "0" : "-60px",
     };
 
     const ulStyle = {
@@ -178,6 +178,17 @@ class EntradaVip extends React.Component {
 
             <div style={rightStyle}>
               <ul style={ulStyle}>
+                <li
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    fontFamily: "blogh",
+                    fontSize: "1.5em",
+                    color: "#ff6555",
+                  }}
+                >
+                  Incluye
+                </li>
                 <li style={liStyle}>
                   <span style={tickStyle}>✓</span>
                   <span>Ingreso por acceso diferenciado</span>

@@ -40,7 +40,7 @@ class EntradaGeneral extends React.Component {
 
     const bgStyle = {
       width: "100vw",
-      height: "100vh",
+      height: isMobile ? "100vh" : "",
       display: "block",
       objectFit: "cover",
       userSelect: "none",
@@ -176,6 +176,17 @@ class EntradaGeneral extends React.Component {
             {/* DERECHA */}
             <div style={rightStyle}>
               <ul style={ulStyle}>
+                <li
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    fontFamily: "blogh",
+                    fontSize: "1.5em",
+                    color: "#ff6555",
+                  }}
+                >
+                  Incluye
+                </li>
                 <li style={liStyle}>
                   <span style={tickStyle}>✓</span>
                   <span>Ingreso al predio del festival</span>

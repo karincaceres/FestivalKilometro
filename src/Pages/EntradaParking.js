@@ -38,7 +38,7 @@ class EntradaParking extends React.Component {
 
     const bgStyle = {
       width: "100vw",
-      height: "100vh",
+      height: isMobile ? "100vh" : "",
       display: "block",
       objectFit: "cover",
       userSelect: "none",
@@ -155,6 +155,16 @@ class EntradaParking extends React.Component {
           <div style={contentStyle}>
             <div style={leftStyle}>
               <ul style={ulStyle}>
+                <li
+                  style={{
+
+                    fontFamily: "blogh",
+                    fontSize: "1.5em",
+                    color: "#ff6555",
+                  }}
+                >
+                  Incluye
+                </li>
                 <li style={liStyle}>
                   <span>
                     Mesa reservada en plataforma premium con vista privilegiada
