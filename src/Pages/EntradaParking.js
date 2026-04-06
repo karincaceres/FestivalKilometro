@@ -38,7 +38,7 @@ class EntradaParking extends React.Component {
 
     const bgStyle = {
       width: "100vw",
-      height: isMobile ? "100vh" : "",
+      height: isMobile ? "110vh" : "",
       display: "block",
       objectFit: "cover",
       userSelect: "none",
@@ -54,7 +54,8 @@ class EntradaParking extends React.Component {
       justifyContent: "center",
       gap: isMobile ? "18px" : "18px",
       padding: isMobile ? "20px 18px" : "20px 60px",
-      boxSizing: "border-box",
+	boxSizing: "border-box",
+	  marginTop:isMobile?'-75px':""
     };
 
     const leftStyle = {
@@ -157,7 +158,6 @@ class EntradaParking extends React.Component {
               <ul style={ulStyle}>
                 <li
                   style={{
-
                     fontFamily: "blogh",
                     fontSize: "1.5em",
                     color: "#ff6555",
@@ -167,8 +167,8 @@ class EntradaParking extends React.Component {
                 </li>
                 <li style={liStyle}>
                   <span>
-                    Mesa reservada en plataforma premium con vista privilegiada
-                    al escenario
+                    Mesa reservada para 12 personas en plataforma premium con
+                    vista privilegiada al escenario
                   </span>
                   <span style={tickStyle}>✓</span>
                 </li>
@@ -199,10 +199,20 @@ class EntradaParking extends React.Component {
                 </li>
 
                 <li style={liStyle}>
-                  <span>Parking exclusivo dentro del predio</span>
+                  <span>4 accesos a parking exclusivo dentro del predio</span>
                   <span style={tickStyle}>✓</span>
                 </li>
-
+                <li style={liStyle}>
+                  <span>
+                    12 vasos oficiales del festival, diseñados especialmente
+                    para esta edición
+                  </span>
+                  <span style={tickStyle}>✓</span>
+                </li>
+                <li style={liStyle}>
+                  <span>12 key holders exclusivos del festival</span>
+                  <span style={tickStyle}>✓</span>
+                </li>
                 <li style={liStyle}>
                   <span>Atención personalizada durante toda la jornada</span>
                   <span style={tickStyle}>✓</span>
@@ -225,6 +235,12 @@ class EntradaParking extends React.Component {
                   </span>
                   <span style={tickStyle}>✓</span>
                 </li>
+                <li style={liStyle}>
+                  <span>
+                    Monto consumible incluido, con 30% destinado a bebidas
+                  </span>
+                  <span style={tickStyle}>✓</span>
+                </li>
               </ul>
             </div>
 
@@ -241,7 +257,7 @@ class EntradaParking extends React.Component {
                 onMouseOut={handleOut}
                 onClick={() =>
                   window.open(
-                    "https://wa.me/543516652186?text=Hola%2C%20quiero%20comprar%20entrada%20Ultra%20VIP",
+                    "https://wa.me/543516652186?text=Hola%20%F0%9F%98%8E%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20la%20compra%20de%20mesas%20en%20el%20Exclusive%20Site%20%E2%80%93%20Festival%20Kil%C3%B3metro.%0AAguardo%20disponibilidad%20y%20valores.",
                     "_blank",
                     "noopener,noreferrer",
                   )

@@ -17,8 +17,8 @@ class Contacto extends React.Component {
 
     const instagramHref = "https://www.instagram.com/festivalkilometro";
     const mailHref = "https://mail.google.com/mail/?view=cm&fs=1&to=festivalkometro@gmail.com&su=Consulta%20Festival%20Kil%C3%B3metro";
-    const whatsappHref = "https://wa.me/543517333333";
-    const whatsappNumber = "351 7 333333";
+    const whatsappHref = "https://wa.me/543515304716";
+    const whatsappNumber = "351 530 4716";
 
     const containerStyle = {
       backgroundImage: `url(${Back})`,
