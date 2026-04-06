@@ -78,7 +78,7 @@ class Fiesta extends React.Component {
           <div
             style={{
               width: "100%",
-              maxWidth: isMobile ? "100%" : "900px",
+              maxWidth: isMobile ? "100%" : "100%",
               aspectRatio: "16 / 9",
               borderRadius: "18px",
               overflow: "hidden",
