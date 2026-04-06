@@ -134,6 +134,14 @@ class EntradaParking extends React.Component {
       fontWeight: "bold",
     };
 
+
+	  const message = `Hola!
+Me gustaría recibir información para la compra de mesas en el Exclusive Site – Festival Kilómetro.
+Aguardo disponibilidad y valores.`;
+
+    const whatsappHref = `https://wa.me/543516652186?text=${encodeURIComponent(message)}`;
+
+
     const handleHover = (e) => {
       e.currentTarget.style.backgroundColor = "#c84d42";
       e.currentTarget.style.transform = "scale(1.04)";
@@ -255,13 +263,7 @@ class EntradaParking extends React.Component {
                 style={buttonStyle}
                 onMouseOver={handleHover}
                 onMouseOut={handleOut}
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/543516652186?text=Hola%20%F0%9F%98%8E%0AMe%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20para%20la%20compra%20de%20mesas%20en%20el%20Exclusive%20Site%20%E2%80%93%20Festival%20Kil%C3%B3metro.%0AAguardo%20disponibilidad%20y%20valores.",
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
+                onClick={() => window.open(whatsappHref, "_blank")}
               >
                 Comprar aquí
               </button>

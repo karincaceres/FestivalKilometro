@@ -17,7 +17,11 @@ class Contacto extends React.Component {
 
     const instagramHref = "https://www.instagram.com/festivalkilometro";
     const mailHref = "https://mail.google.com/mail/?view=cm&fs=1&to=festivalkometro@gmail.com&su=Consulta%20Festival%20Kil%C3%B3metro";
-    const whatsappHref = "https://wa.me/543515304716?text=Hola%21%20%F0%9F%9A%80%0AEstoy%20empezando%20mi%20recorrido%20hacia%20*Festival%20Kil%C3%B3metro*%0A%C2%BFMe%20ayudan%20con%20la%20info%20que%20necesito%3F";
+    const message = `Hola! 
+	Estoy empezando mi recorrido hacia *Festival Kilómetro*
+	¿Me ayudan con la info que necesito?`;
+
+    const whatsappHref = `https://wa.me/543515304716?text=${encodeURIComponent(message)}`;
     const whatsappNumber = "351 530 4716";
 
     const containerStyle = {
