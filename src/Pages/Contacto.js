@@ -3,7 +3,6 @@ import Background from "../assets/Fondos/fondo1.png";
 import BackgroundR from "../assets/Fondos/fondoV.png";
 import fondoContacto from "../assets/Botones/fondo_contacto.png";
 import tituloContacto from "../assets/Botones/contacto.png";
-import textoContacto from "../assets/Botones/texto_1.png";
 import botonIG from "../assets/Botones/ig.png";
 import botonMail from "../assets/Botones/gmail.png";
 import botonWhatsapp from "../assets/Botones/whatsapp.png";
@@ -77,7 +76,7 @@ class Contacto extends React.Component {
     };
 
 const rightStyle = {
-  width: isMobile ? "100%" : "34%",
+  width: isMobile ? "100%" : "64%",
   display: "flex",
   flexDirection: "column",
   alignItems: isMobile ? "flex-start" : "flex-start",
@@ -97,14 +96,7 @@ const rightStyle = {
       display: "block",
     };
 
-    const textStyle = {
-      width: isMobile ? "82%" : "92%",
-      maxWidth: isMobile ? "420px" : "620px",
-      height: "auto",
-      objectFit: "contain",
-      display: "block",
-      marginBottom: isMobile ? "4px" : "10px",
-    };
+
 
     const linkStyle = {
       display: "inline-block",
@@ -163,12 +155,9 @@ const whatsappWrapperStyle = {
             </div>
 
             <div style={rightStyle}>
-              <img
-                src={textoContacto}
-                alt="Cualquier duda o consulta estamos para ayudarte"
-                style={textStyle}
-              />
-
+              <p style={{fontFamily:"Halogen-Black", fontSize:'1.3em', color:"#fff", textAlign:'left'}}>
+                NO TE PIERDAS EL RECORRIDO, ESCRIBÍNOS Y TE AYUDAMO!
+              </p>
               <a
                 href={instagramHref}
                 target="_blank"
@@ -186,7 +175,11 @@ const whatsappWrapperStyle = {
                 onMouseOver={handleHover}
                 onMouseOut={handleOut}
               >
-							<img src={botonMail} alt="Email" style={{ ...buttonImgStyle , width:'110%'}} />
+                <img
+                  src={botonMail}
+                  alt="Email"
+                  style={{ ...buttonImgStyle, width: "110%" }}
+                />
               </a>
 
               <a
@@ -204,7 +197,6 @@ const whatsappWrapperStyle = {
                     style={{
                       ...buttonImgStyle,
                       width: "100%",
-
                     }}
                   />
                   <span style={whatsappTextStyle}>{whatsappNumber}</span>
