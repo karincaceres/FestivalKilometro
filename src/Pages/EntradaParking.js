@@ -225,20 +225,20 @@ class EntradaParking extends React.Component {
                 style={titleStyle}
               />
 
-              <a
-                href="https://www.edenentradas.ar/event/festival-kilometro-ultravipstanding"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none" }}
+              <button
+                style={buttonStyle}
+                onMouseOver={handleHover}
+                onMouseOut={handleOut}
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/543516652186?text=Hola%2C%20quiero%20comprar%20entrada%20Ultra%20VIP",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
               >
-                <button
-                  style={buttonStyle}
-                  onMouseOver={handleHover}
-                  onMouseOut={handleOut}
-                >
-                  Comprar aquí
-                </button>
-              </a>
+                Comprar aquí
+              </button>
             </div>
           </div>
         </div>

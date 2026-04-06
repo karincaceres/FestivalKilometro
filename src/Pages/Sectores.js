@@ -1,8 +1,7 @@
 import React from "react";
-import SectorWeb from "../assets/Sectores/SectorWeb.png";
 import fondoSectores from "../assets/Sectores/fondo_sectores.png";
-import mapaSectores from "../assets/Sectores/mapa.png";
-import tituloSectores from "../assets/Sectores/tit_sectores.png";
+import mapaSectoresV from "../assets/Sectores/KM_RRSS_Plano_3.4.jpg"
+import sectores from "../assets/Sectores/sectores.png";
 import Background from "../assets/Fondos/fondo1.png";
 import BackgroundR from "../assets/Fondos/fondoV.png";
 
@@ -10,7 +9,7 @@ export default function Sectores() {
   const isMobile = window.innerWidth <= 768;
 
   const Back = isMobile ? BackgroundR : Background;
-
+const mapaSectores = isMobile ? mapaSectoresV : sectores;
   const containerStyle = {
     width: "100%",
     minHeight: "100vh",
@@ -83,17 +82,7 @@ const mobileMapStyle = {
   transformOrigin: "top center",
 };
 
-  const mobileTitleStyle = {
-    position: "absolute",
-    bottom: "6%",
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: "78%",
-    height: "auto",
-    objectFit: "contain",
-    userSelect: "none",
-    pointerEvents: "none",
-  };
+ 
 
   if (isMobile) {
     return (
@@ -110,11 +99,7 @@ const mobileMapStyle = {
               alt="Mapa de sectores"
               style={mobileMapStyle}
             />
-            <img
-              src={tituloSectores}
-              alt="Plano de sectores"
-              style={mobileTitleStyle}
-            />
+
           </div>
         </div>
       </div>
@@ -124,7 +109,7 @@ const mobileMapStyle = {
   return (
     <div style={containerStyle}>
       <div style={desktopWrapperStyle}>
-        <img src={SectorWeb} alt="Plano de sectores" style={desktopImgStyle} />
+        <img src={sectores} alt="Plano de sectores" style={desktopImgStyle} />
       </div>
     </div>
   );
