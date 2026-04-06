@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { Grid } from "@material-ui/core";
-import BackgroundR from "../assets/Fondos/Fondos media/fondo3_720x1280.jpg";
+
 import Background from "../assets/Fondos/fondo3_1080x1920.jpg";
 import liner from "../assets/Fondos/linetit-01S.png";
 import Header from "./Header.js";
@@ -14,6 +14,7 @@ class Agenda extends React.Component {
     // we use this to make the card to appear after the page has been rendered
     this.state = {};
   }
+
   pdf() {
     window.open(
       "https://publiceventsenjoy.s3.amazonaws.com/saber+mas-pdf.pdf",
@@ -27,12 +28,7 @@ class Agenda extends React.Component {
     const mid = (window.innerWidth > 1000) & (window.innerWidth < 1400);
 
     var back = Background;
-    var justify = "center";
 
-    if (!min) {
-      back = BackgroundR;
-      justify = "start";
-    }
     const height2 = window.innerHeight - 90;
     return (
       <div style={{ width: "100%", height: height2, flexDirection: "row" }}>
@@ -100,12 +96,14 @@ class Agenda extends React.Component {
                 </p>
                 <div>
                   <img
-                    src={liner}
+									src={liner}
+									alt="imagenes"
                     style={{
                       width: mincel ? "80%" : "50%",
                       height: mincel ? "10" : "30%",
                       marginTop: mincel ? "-10%" : "1%",
-                      alignContent: "center",
+						alignContent: "center",
+
                     }}
                   ></img>
                 </div>

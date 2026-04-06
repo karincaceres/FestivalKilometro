@@ -95,7 +95,7 @@ class PuestoVenta extends React.Component {
       display: "block",
     };
 
-    
+
 
     const edenLinkStyle = {
       display: "flex",
@@ -145,7 +145,13 @@ class PuestoVenta extends React.Component {
       lineHeight: 1.1,
       marginBottom: "4px",
     };
-
+    const locationNameStyleW = {
+      fontFamily: "Blogh",
+      fontSize: isMobile ? "1.7em" : "1.7em",
+      color: "#FFF",
+      lineHeight: 1.1,
+      marginBottom: "4px",
+    };
     const textStyle = {
       fontFamily: "Halogen-Regular",
       fontSize: isMobile ? "0.88em" : "1em",
@@ -179,7 +185,7 @@ class PuestoVenta extends React.Component {
 
             {/* COLUMNA 2 */}
             <div style={centerStyle}>
-              <div style={locationNameStyle}>Digital</div>
+              <div style={locationNameStyleW}>DIGITAL</div>
 
               <a
                 href="https://www.edenentradas.ar/event/festival-kilometro-wh"
