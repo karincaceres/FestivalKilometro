@@ -189,13 +189,13 @@ Aguardo disponibilidad y valores.`;
                   <span style={tickStyle}>✓</span>
                 </li> */}
 
-                <li style={liStyle}>
+                {/* <li style={liStyle}>
                   <span>
                     Accesos VIP exclusivos para ingreso y circulación dentro del
                     predio
                   </span>
                   <span style={tickStyle}>✓</span>
-                </li>
+                </li> */}
 
                 {/* <li style={liStyle}>
                   <span>
@@ -210,7 +210,7 @@ Aguardo disponibilidad y valores.`;
                   <span>4 accesos a parking exclusivo dentro del predio</span>
                   <span style={tickStyle}>✓</span>
                 </li>
-                <li style={liStyle}>
+                {/* <li style={liStyle}>
                   <span>
                     12 vasos oficiales del festival, diseñados especialmente
                     para esta edición
@@ -220,7 +220,7 @@ Aguardo disponibilidad y valores.`;
                 <li style={liStyle}>
                   <span>12 key holders exclusivos del festival</span>
                   <span style={tickStyle}>✓</span>
-                </li>
+                </li> */}
                 <li style={liStyle}>
                   <span>Atención personalizada durante toda la jornada</span>
                   <span style={tickStyle}>✓</span>
