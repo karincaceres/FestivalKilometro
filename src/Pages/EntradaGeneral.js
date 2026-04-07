@@ -157,20 +157,28 @@ class EntradaGeneral extends React.Component {
                 style={titleStyle}
               />
 
-              <a
-                href="https://www.edenentradas.ar/event/festival-kilometro-general"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none" }}
+              <button
+                style={buttonStyle}
+                onMouseOver={handleHover}
+                onMouseOut={handleOut}
+                onClick={() => {
+                  if (window.fbq) {
+                    window.fbq("track", "InitiateCheckout", {
+                      content_name: "General Ruta 8",
+                      content_category: "Entradas Festival Kilómetro",
+                      destination: "Eden Entradas",
+                    });
+                  }
+
+                  window.open(
+                    "https://www.edenentradas.ar/event/festival-kilometro-general",
+                    "_blank",
+                    "noopener,noreferrer",
+                  );
+                }}
               >
-                <button
-                  style={buttonStyle}
-                  onMouseOver={handleHover}
-                  onMouseOut={handleOut}
-                >
-                  Comprar aquí
-                </button>
-              </a>
+                Comprar aquí
+              </button>
             </div>
 
             {/* DERECHA */}

@@ -263,7 +263,17 @@ Aguardo disponibilidad y valores.`;
                 style={buttonStyle}
                 onMouseOver={handleHover}
                 onMouseOut={handleOut}
-                onClick={() => window.open(whatsappHref, "_blank")}
+                onClick={() => {
+                  if (window.fbq) {
+                    window.fbq("track", "Contact", {
+                      content_name: "Exclusive Site Ruta 66",
+                      content_category: "Mesas Festival Kilómetro",
+                      destination: "WhatsApp",
+                    });
+                  }
+
+                  window.open(whatsappHref, "_blank", "noopener,noreferrer");
+                }}
               >
                 Comprar aquí
               </button>
