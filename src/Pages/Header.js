@@ -23,7 +23,14 @@ class Header extends React.Component {
       this.setState({ menu: false });
       return;
     }
-
+ if (section.toLowerCase() === "acreditaciones") {
+   window.open(
+     "https://docs.google.com/forms/d/e/1FAIpQLSecHPfu8DCQfZgRsDT5IEZnnlrCCzk-LBWIfi-qE5PwmbSssw/viewform?usp=sharing",
+     "_blank",
+   );
+   this.setState({ menu: false });
+   return;
+ }
     this.props.redirect(section);
     this.setState({ menu: false });
   };
@@ -98,6 +105,12 @@ class Header extends React.Component {
                 CONTACTO
               </button>
               <button
+                onClick={() => this.handleRedirect("ACREDITACIONES")}
+                className={this.getClass("acreditaciones")}
+              >
+                ACREDITACIONES
+              </button>
+              <button
                 onClick={() => this.handleRedirect("FAQs")}
                 className={this.getClass("contacto")}
               >
@@ -149,6 +162,7 @@ class Header extends React.Component {
               { label: "SECTORES", key: "Sectores" },
               { label: "PUNTOS DE VENTA", key: "PuntoVenta" },
               { label: "CONTACTO", key: "Contacto" },
+              { label: "ACREDITACIONES", key: "acreditaciones" },
               { label: "FAQ's", key: "faqs" },
             ].map(({ label, key }) => (
               <button
