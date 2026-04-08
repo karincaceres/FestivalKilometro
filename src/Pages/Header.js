@@ -17,7 +17,7 @@ class Header extends React.Component {
   handleRedirect = (section) => {
     if (section.toLowerCase() === "faqs") {
       window.open(
-        "https://drive.google.com/file/d/17aH6arRQVVXQtHLg1Qr1UaDhONMc9Ljx/view?usp=sharing",
+        "https://drive.google.com/file/d/17gUTcKF0ZhfSxHqUSzAucJZz8AQLWL7F/view?usp=sharing",
         "_blank",
       );
       this.setState({ menu: false });
