@@ -27,7 +27,7 @@ class SliderHome extends React.Component {
     const footerHeight = isMobile ? 160 : 70;
     const sliderHeight = `calc(100vh - ${headerHeight + footerHeight}px)`;
 
-    const desktopSlides = [slide1, slide2, slide3, slide4];
+    const desktopSlides = [slide1, slide3, slide4];
     const mobileSlides = [
       mobileSlide1,
       mobileSlide2,
