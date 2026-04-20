@@ -94,7 +94,7 @@ class EntradaParking extends React.Component {
 
     const smallTopTextStyle = {
       fontFamily: "Halogen-Regular",
-      fontSize: isMobile ? "0.9rem" : "1rem",
+      fontSize: isMobile ? "0.7rem" : "0.8rem",
       color: "#5f5f5f",
       fontWeight: 700,
       letterSpacing: "0.03em",
@@ -120,7 +120,7 @@ class EntradaParking extends React.Component {
 
     const optionTitleOrange = {
       fontFamily: "blogh",
-      fontSize: isMobile ? "1.25rem" : "1.8rem",
+      fontSize: isMobile ? "1.55rem" : "1.8rem",
       color: "#ff6555",
       lineHeight: 1,
       marginBottom: "4px",
@@ -129,7 +129,7 @@ class EntradaParking extends React.Component {
 
     const optionTitleBlue = {
       fontFamily: "blogh",
-      fontSize: isMobile ? "1.2rem" : "1.75rem",
+      fontSize: isMobile ? "1.55rem" : "1.75rem",
       color: "#69d8ff",
       lineHeight: 1,
       marginBottom: "4px",
@@ -138,7 +138,7 @@ class EntradaParking extends React.Component {
 
     const optionTitlePurple = {
       fontFamily: "blogh",
-      fontSize: isMobile ? "1.05rem" : "1.45rem",
+      fontSize: isMobile ? "1.55rem" : "1.45rem",
       color: "#6d15ff",
       lineHeight: 1,
       marginBottom: "4px",
@@ -147,7 +147,7 @@ class EntradaParking extends React.Component {
 
     const optionDescStyle = {
       fontFamily: "Halogen-Regular",
-      fontSize: isMobile ? "0.9rem" : "0.95rem",
+      fontSize: isMobile ? "0.7rem" : "0.8rem",
       color: "#595959",
       lineHeight: 1.1,
       fontWeight: 700,
@@ -159,24 +159,16 @@ class EntradaParking extends React.Component {
       left: isMobile ? 0 : "auto",
       top: isMobile ? "2px" : "4px",
       color: "#ff6d57",
-      fontSize: isMobile ? "1rem" : "1.25rem",
+      fontSize: isMobile ? "1.3rem" : "1.35rem",
       lineHeight: 1,
       fontWeight: "bold",
     };
 
-    const rightTextStyle = {
-      fontFamily: "blogh",
-      fontSize: isMobile ? "1.1rem" : "1.45rem",
-      color: "#ff6555",
-      textTransform: "uppercase",
-      lineHeight: 1,
-      textAlign: isMobile ? "center" : "left",
-      marginTop: isMobile ? "0" : "-4px",
-    };
+
 
     const rightSubTextStyle = {
-      fontFamily: "Halogen-Regular",
-      fontSize: isMobile ? "0.9rem" : "0.95rem",
+      fontFamily: "Halogen-Black",
+      fontSize: isMobile ? "1rem" : "0.95rem",
       color: "#ff6555",
       fontWeight: 700,
       lineHeight: 1,
@@ -217,7 +209,7 @@ class EntradaParking extends React.Component {
       textTransform: "uppercase",
       transition: "all 0.25s ease",
       boxShadow: "0 6px 14px rgba(0,0,0,0.18)",
-      marginTop: isMobile ? "8px" : "10px",
+      marginTop: isMobile ? "8px" : "-10px",
     };
 
     const handleHover = (e) => {
@@ -292,7 +284,7 @@ class EntradaParking extends React.Component {
                 style={titleStyle}
               />
 
-              <div style={rightTextStyle}>Ya tiene que ser tuya!</div>
+              <div style={rightSubTextStyle}>Ya tiene que ser tuya!</div>
               <div style={rightSubTextStyle}>Se van las últimas!</div>
 
               <a
