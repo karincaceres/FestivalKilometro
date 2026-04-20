@@ -244,7 +244,9 @@ class EntradaParking extends React.Component {
 
           <div style={contentStyle}>
             <div style={leftStyle}>
-              <div style={smallTopTextStyle}>Tenemos 2 opciones para vos</div>
+              <div style={smallTopTextStyle}>
+                Tenemos 2 opciones de mesa para vos
+              </div>
 
               <div style={optionListStyle}>
                 <div style={optionBlockStyle}>
@@ -266,7 +268,7 @@ class EntradaParking extends React.Component {
                   <div style={optionDescStyle}>Sin bebidas</div>
                   <span style={tickStyle}>✓</span>
                 </div>
-
+			<div style={{ ...smallTopTextStyle, marginBottom:'-10px' }}> y Además   </div>
                 <div style={optionBlockStyle}>
                   <div style={optionTitlePurple}>Pack Drink VIP</div>
                   <div style={optionDescStyle}>
