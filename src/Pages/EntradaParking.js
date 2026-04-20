@@ -70,7 +70,7 @@ class EntradaParking extends React.Component {
       alignItems: isMobile ? "center" : "flex-end",
       color: "#666",
       fontFamily: "Halogen-Regular",
-      marginTop: isMobile ? "0" : "-35px",
+      marginTop: isMobile ? "0" : "-1px",
       textAlign: isMobile ? "center" : "right",
     };
 
