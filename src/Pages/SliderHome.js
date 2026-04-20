@@ -3,7 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import "./Main.css";
 
 import slide1 from "../assets/Slider/1920 x 600/1_1920x600px.png";
-import slide2 from "../assets/Slider/1920 x 600/2_1920x600px.png";
 import slide3 from "../assets/Slider/1920 x 600/3_1920x600px.png";
 import slide4 from "../assets/Slider/1920 x 600/4_1920x600px.png";
 import mobileSlide1 from "../assets/Slider/500 x 500/1_500x500px.png";
