@@ -93,7 +93,7 @@ class EntradaParking extends React.Component {
     };
 
     const smallTopTextStyle = {
-      fontFamily: "Halogen-Regular",
+      fontFamily: "Halogen-Black",
       fontSize: isMobile ? "0.7rem" : "0.8rem",
       color: "#5f5f5f",
       fontWeight: 700,
@@ -244,7 +244,7 @@ class EntradaParking extends React.Component {
 
           <div style={contentStyle}>
             <div style={leftStyle}>
-              <div style={smallTopTextStyle}>
+              <div style={{ ...smallTopTextStyle, marginRight: "25px" }}>
                 Tenemos 2 opciones de mesa para vos
               </div>
 
@@ -268,8 +268,11 @@ class EntradaParking extends React.Component {
                   <div style={optionDescStyle}>Sin bebidas</div>
                   <span style={tickStyle}>✓</span>
                 </div>
-			<div style={{ ...smallTopTextStyle, marginBottom:'-10px' }}> y Además   </div>
+                <div style={{ ...smallTopTextStyle, marginRight: "25px" , marginBottom:'-10px'}}>
+                  y Además
+                </div>
                 <div style={optionBlockStyle}>
+
                   <div style={optionTitlePurple}>Pack Drink VIP</div>
                   <div style={optionDescStyle}>
                     Sumá consumo premium y viví la experiencia completa
