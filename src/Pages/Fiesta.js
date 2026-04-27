@@ -2,15 +2,15 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Main.css";
 // eslint-disable-next-line
-import slide1 from "../assets/Slider/1920 x 600/1_1920x600px.png";
+import slide1 from "../assets/Slider/1920 x 600/1_1920x600px.webp";
 // eslint-disable-next-line
-import slide2 from "../assets/Slider/1920 x 600/2_1920x600px.png";
-import slide3 from "../assets/Slider/1920 x 600/3_1920x600px.png";
-import mobileSlide1 from "../assets/Slider/500 x 500/1_500x500px.png";
-import mobileSlide2 from "../assets/Slider/500 x 500/2_500x500px.png";
-import mobileSlide3 from "../assets/Slider/500 x 500/3_500x500px.png";
-import mobileSlide4 from "../assets/Slider/500 x 500/4_500x500px.png";
-import mobileSlide5 from "../assets/Slider/500 x 500/5_500x500px.png";
+import slide2 from "../assets/Slider/1920 x 600/2_1920x600px.webp";
+import slide3 from "../assets/Slider/1920 x 600/3_1920x600px.webp";
+import mobileSlide1 from "../assets/Slider/500 x 500/1_500x500px.webp";
+import mobileSlide2 from "../assets/Slider/500 x 500/2_500x500px.webp";
+import mobileSlide3 from "../assets/Slider/500 x 500/3_500x500px.webp";
+import mobileSlide4 from "../assets/Slider/500 x 500/4_500x500px.webp";
+import mobileSlide5 from "../assets/Slider/500 x 500/5_500x500px.webp";
 
 import background_h from "../assets/Fondos/fondo1.png";
 import background_v from "../assets/Fondos/fondoV.png";

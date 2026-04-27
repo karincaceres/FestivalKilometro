@@ -1,7 +1,7 @@
 import React from "react";
 import fondoSectores from "../assets/Sectores/fondo_sectores.png";
-import mapaSectoresV from "../assets/Sectores/KM_RRSS_Plano_3.4.jpg"
-import sectores from "../assets/Sectores/sectores.png";
+import mapaSectoresV from "../assets/Sectores/KM_RRSS_Plano_3.4.webp"
+import sectores from "../assets/Sectores/sectores.webp";
 import Background from "../assets/Fondos/fondo1.png";
 import BackgroundR from "../assets/Fondos/fondoV.png";
 
@@ -82,7 +82,7 @@ const mobileMapStyle = {
   transformOrigin: "top center",
 };
 
- 
+
 
   if (isMobile) {
     return (
