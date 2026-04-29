@@ -55,9 +55,13 @@ export default function QrScanner() {
         showPopup("#00c853", `VÁLIDO ✔\nTicket #${r.dni} (${r.tipo})`);
       } else if (r.error === "ENTRADA YA UTILIZADA") {
         playSound("ok.mp3");
+
+        const fecha = r.fechaUso || "";
+        const hora = r.horaUso || "";
+
         showPopup(
           "#d50000",
-          `YA USADO ❌ \nTicket #${r.usedAt}`,
+          `YA UTILIZADO ❌\n${fecha}${hora ? ` · ${hora}` : ""}`,
         );
       } else {
         playSound("ok.mp3");
