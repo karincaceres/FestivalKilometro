@@ -55,7 +55,10 @@ export default function QrScanner() {
         showPopup("#00c853", `VÁLIDO ✔\nTicket #${r.dni} (${r.tipo})`);
       } else if (r.error === "ENTRADA YA UTILIZADA") {
         playSound("ok.mp3");
-        showPopup("#d50000", "YA USADO ❌");
+        showPopup(
+          "#d50000",
+          `YA USADO ❌ \nTicket #${r.usedAt}`,
+        );
       } else {
         playSound("ok.mp3");
         showPopup("#ffab00", "NO VALIDO ⚠");
@@ -175,7 +178,7 @@ export default function QrScanner() {
           <div
             style={{
               marginTop: 30,
-              fontSize: 22,
+              fontSize: 20,
               opacity: 0.9,
               padding: "10px 25px",
               borderRadius: 12,

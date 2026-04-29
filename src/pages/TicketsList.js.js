@@ -256,7 +256,8 @@ export default function QLKTicketsList() {
                 <td style={{ padding: 8 }}>{t.dni}</td>
                 <td style={{ padding: 8 }}>{t.tipo}</td>
 
-                <td style={{ padding: 8 }}>
+					<td style={{ padding: 8 }}>
+					{(t.used !== 1) &&(
                   <a
                     href={t.pdf_link}
                     target="_blank"
@@ -264,7 +265,7 @@ export default function QLKTicketsList() {
                     style={{ color: "#ff6555", fontWeight: "bold" }}
                   >
                     Descargar
-                  </a>
+                  </a>)}
                 </td>
 
                 <td style={{ padding: 8 }}>
@@ -294,21 +295,23 @@ export default function QLKTicketsList() {
                 </td>
 
                 {/* GUARDAR */}
-                <td style={{ padding: 8 }}>
-                  <button
-                    onClick={() => guardarNombre(t)}
-                    disabled={!!t.nombreAsignado}
-                    style={{
-                      padding: "6px 12px",
-                      background: t.nombreAsignado ? "#555" : "#8800ff",
-                      borderRadius: 6,
-                      fontWeight: "bold",
-                      cursor: t.nombreAsignado ? "not-allowed" : "pointer",
-                      color: t.nombreAsignado ? "#999" : "#000",
-                    }}
-                  >
-                    💾
-                  </button>
+					<td style={{ padding: 8 }}>
+						{(t.used !== 1) && (
+							<button
+								onClick={() => guardarNombre(t)}
+								disabled={!!t.nombreAsignado}
+								style={{
+									padding: "6px 12px",
+									background: t.nombreAsignado ? "#555" : "#8800ff",
+									borderRadius: 6,
+									fontWeight: "bold",
+									cursor: t.nombreAsignado ? "not-allowed" : "pointer",
+									color: t.nombreAsignado ? "#999" : "#000",
+								}}
+							>
+								💾
+							</button>
+						)}
                 </td>
               </tr>
             ))}
