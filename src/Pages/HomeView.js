@@ -17,7 +17,7 @@ class HomeView extends React.Component {
     super(props);
     this.state = { visible: "home" };
 
-    const eventDate = new Date("2026-05-01T19:00:00");
+    const eventDate = new Date("2026-05-01T18:00:00");
     const finevento = new Date("2026-05-01T23:59:00");
     localStorage.setItem("eventDate", eventDate);
     localStorage.setItem("finevento", finevento);
