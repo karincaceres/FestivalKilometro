@@ -41,14 +41,14 @@ function App() {
 
           <Switch>
             {/* Rutas principales */}
-            <Route exact path="/" component={HomeView} />
+            <Route exact path="/HomeView" component={HomeView} />
 
             <Route path="/evento" component={Evento} />
             <Route path="/sectores" component={Sectores} />
             <Route path="/contacto" component={Contacto} />
             <Route path="/puestoventa" component={PuestoVenta} />
             <Route path="/grilla" component={Grilla} />
-            <Route path="/cargando" component={Cargando} />
+            <Route path="/" component={Cargando} />
             <Route path="/fiesta" component={Fiesta} />
 
             {/* Rutas de entradas */}
