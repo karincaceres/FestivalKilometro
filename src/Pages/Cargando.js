@@ -4,7 +4,7 @@ import "./Main.css";
 import FondoMobile from "../assets/Cargando/Cierre_provisorio_1Mobile.png";
 import FondoDesktop from "../assets/Cargando/Cierre_provisorio_1920x600px.png";
 import compras from "../assets/Cargando/Bot_gacetilla.png";
-
+import logosProducen from "../assets/logos_producen.png";
 class Cargando extends React.Component {
   render() {
     const min = window.innerWidth >= 790;
@@ -51,6 +51,31 @@ class Cargando extends React.Component {
               }}
             />
           </a>
+        </div>
+        {/* Logos producen abajo */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: min ? "2%" : "3%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 2,
+          }}
+        >
+          <img
+            src={logosProducen}
+            alt="producen"
+            style={{
+              height: min ? "55px" : "38px",
+              width: "auto",
+              maxWidth: min ? "70%" : "85%",
+              objectFit: "contain",
+            }}
+          />
         </div>
       </div>
     );
